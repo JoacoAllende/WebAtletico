@@ -1,17 +1,18 @@
-const express = require('express');
-const router = express.Router();
+const equipo = require("../models/equipos.model");
+
+const equipoController = {};
 
 const mysqlConnection = require('../database');
 
-router.get('/', (req, res) => {
+equipoController.getEquipos = (req, res, next) => {
     const query = 'SELECT * FROM equipo';
     mysqlConnection.query(query, (err, rows, fields) => {
-        if (!err){
+        if (!err) {
             res.json(rows);
         } else {
             console.log(err);
         }
     })
-})
+};
 
-module.exports = router;
+module.exports = equipoController;

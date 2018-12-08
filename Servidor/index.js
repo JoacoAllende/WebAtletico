@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
+require('./database')
 
 //Settings
 
@@ -9,10 +11,11 @@ app.set('port', process.env.PORT || 3000);
 //Middlewares
 
 app.use(express.json());
+app.use(cors({origin: 'http//localhost:4200'}));
 
 //Routes
 
-app.use(require('./routes/equipos'));
+app.use(require('./routes/equipos.routes'));
 
 //Starting the Server
 
