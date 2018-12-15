@@ -1,6 +1,4 @@
-const equipo = require("../models/equipos.model");
-
-const equipoController = {};
+ const equipoController = {};
 
 const mysqlConnection = require('../database');
 

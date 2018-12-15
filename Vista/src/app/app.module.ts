@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EquipoComponent } from './components/equipo/equipo.component';
 import { HttpClient } from 'selenium-webdriver/http';
+import { GruposComponent } from './components/grupos/grupos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EquipoComponent
+    EquipoComponent,
+    GruposComponent,
   ],
   imports: [
     BrowserModule,

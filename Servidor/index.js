@@ -11,16 +11,14 @@ app.set('port', process.env.PORT || 3000);
 //Middlewares
 
 app.use(express.json());
-app.use(cors({origin: 'http//localhost:4200'}));
+app.use(cors({origin: 'http://localhost:4200'}));
 
 //Routes
 
 app.use(require('./routes/equipos.routes'));
+app.use(require('./routes/grupo.routes'))
 
 //Starting the Server
-
-
-
 
 app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));

@@ -12,9 +12,10 @@ export class EquipoService {
 
   constructor(private http : HttpClient) { 
     this.equipoSeleccionado = new Equipo();
+    this.equipos = [];
   }
 
   getEquipos(){
-    return this.http.get('http//localhost:3000/equipos');
+    return this.http.get('http://localhost:3000/equipos');
   }
 }
