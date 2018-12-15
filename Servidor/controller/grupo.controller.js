@@ -10,24 +10,42 @@ grupoController.getGrupos = (req, res, next) => {
             console.log(cantGrupos + " primera");
             let grupos = [];
             for (let i = 1; i <= cantGrupos; i++) {
-                const query = 'SELECT * FROM equipo WHERE grupo = ' + i;
+                const query = 'SELECT * FROM equipo WHERE grupo = ' + i + ' ORDER BY puntos DESC, diferenciaGoles DESC, golesAFavor DESC, golesEnContra DESC';
                 mysqlConnection.query(query, (err, rows, fields) => {
                     if (!err) {
                         let grupo = [];
+                        let posiciones = [];
                         let resultArray = Object.values(JSON.parse(JSON.stringify(rows)));
                         resultArray.forEach(function (element) {
-                            grupo.push(element);
+                            posiciones.push(element);
                         });
-                        grupos.push(grupo);
-                        if (i == cantGrupos){
-                            res.json(grupos);
-                        }
+                        grupo.push(posiciones);
+                        const query = 'SELECT * FROM juega WHERE id_grupo = ' + i;
+                        let partidos = [];
+                        mysqlConnection.query(query, (err, rows, fields) => {
+                            if (!err) {
+                                //console.log(rows);
+                                let resultArrayPartidos = Object.values(JSON.parse(JSON.stringify(rows)));
+                                resultArrayPartidos.forEach(function (element) {
+                                    partidos.push(element);
+                                });
+                                grupo.push(partidos);
+                                //console.log(grupo);
+                                grupos.push(grupo);
+                                if (i == cantGrupos) {
+                                    res.json(grupos);
+                                }
+                            } else {
+                                console.log(err);
+                            }
+                        })
+
                     } else {
                         console.log(err);
                     }
                 })
             }
-            
+
         } else {
             console.log(err);
         }
