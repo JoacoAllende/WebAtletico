@@ -1,13 +1,23 @@
 
 <div *ngFor="let grupo of gruposService.grupos">
-  <h1>Grupo {{grupo[0].grupo}}</h1>
+  <h1>Grupo {{grupo[0][0].grupo}}</h1>
   <div>
     <table class="table table-bordered table-hover table-striped">
       <thead><th>Equipo</th><th>Puntos</th></thead>
       <tbody>
-        <tr *ngFor="let equipo of grupo">
+        <tr *ngFor="let equipo of grupo[0]">
           <td>{{equipo.nombre}}</td>
           <td>{{equipo.puntos}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-bordered table-hover table-striped">
+      <thead><th>Equipo</th><th>Resultado</th><th>Equipo</th></thead>
+      <tbody>
+        <tr *ngFor="let partido of grupo[1]">
+          <td>{{partido.equipoUno}}</td>
+          <td>{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
+          <td>{{partido.equipoDos}}</td>
         </tr>
       </tbody>
     </table>

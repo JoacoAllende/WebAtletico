@@ -20,7 +20,7 @@ grupoController.getGrupos = (req, res, next) => {
                             posiciones.push(element);
                         });
                         grupo.push(posiciones);
-                        const query = 'SELECT * FROM juega WHERE id_grupo = ' + i;
+                        const query = 'SELECT j.*, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON j.id_equipoDos = e2.id WHERE j.id_grupo = ' + i + ' ORDER BY j.id_partido';
                         let partidos = [];
                         mysqlConnection.query(query, (err, rows, fields) => {
                             if (!err) {
