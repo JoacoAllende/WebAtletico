@@ -16,7 +16,8 @@ app.use(cors({origin: 'http://localhost:4200'}));
 //Routes
 
 app.use(require('./routes/equipos.routes'));
-app.use(require('./routes/grupo.routes'))
+app.use(require('./routes/grupo.routes'));
+app.use(require('./routes/octavosOro.routes'));
 
 //Starting the Server
 
