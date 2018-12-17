@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const partidos = require("../controller/octavosOro");
+const partidos = require("../controller/copaOro");
 
-router.get('/octavosOro', partidos.getPartidos);
+router.get('/copaOro', partidos.getPartidos);
 
 module.exports = router;
