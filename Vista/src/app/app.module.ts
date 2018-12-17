@@ -8,14 +8,14 @@ import { AppComponent } from './app.component';
 import { EquipoComponent } from './components/equipo/equipo.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { GruposComponent } from './components/grupos/grupos.component';
-import { OctavosOroComponent } from './components/octavos-oro/octavos-oro.component';
+import { CopaOroComponent } from './components/copa-oro/copa-oro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EquipoComponent,
     GruposComponent,
-    OctavosOroComponent,
+    CopaOroComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OctavosOroComponent } from './octavos-oro.component';
+import { CopaOroComponent } from './copa-oro.component';
 
-describe('OctavosOroComponent', () => {
-  let component: OctavosOroComponent;
-  let fixture: ComponentFixture<OctavosOroComponent>;
+describe('CopaOroComponent', () => {
+  let component: CopaOroComponent;
+  let fixture: ComponentFixture<CopaOroComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OctavosOroComponent ]
+      declarations: [ CopaOroComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OctavosOroComponent);
+    fixture = TestBed.createComponent(CopaOroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

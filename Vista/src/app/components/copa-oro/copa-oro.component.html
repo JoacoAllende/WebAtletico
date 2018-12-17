@@ -1,0 +1,15 @@
+<div *ngFor="let instancia of copaOroService.instancias">
+  <h1>{{instancia[0][0]}}</h1>
+  <div>
+    <table class="table table-bordered table-hover table-striped">
+      <thead><th>Equipo</th><th>Resultado</th><th>Equipo</th></thead>
+      <tbody>
+        <tr *ngFor="let partido of instancia[1]">
+          <td>{{partido.equipoUno}}</td>
+          <td>{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
+          <td>{{partido.equipoDos}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
