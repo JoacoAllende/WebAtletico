@@ -1,0 +1,16 @@
+.table {
+    border: 1px solid rgb(10, 5, 5);
+  }
+
+  .table-bordered {
+    border: 1px solid black;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid black;
+  }
+
+  .centrado {
+      text-align: center;
+  }
