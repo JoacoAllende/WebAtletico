@@ -1,5 +1,9 @@
 .table {
     border: 1px solid rgb(10, 5, 5);
+    background-color: hsl(0, 100%, 50%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
   }
 
   .table-bordered {
@@ -13,4 +17,18 @@
 
   .centrado {
       text-align: center;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color:white;
+    color: red;
+  }
+
+  div h1 {
+    color: white;
+    font-weight: bold;
+  }
+
+  .espacio {
+    height: 20px;
   }
