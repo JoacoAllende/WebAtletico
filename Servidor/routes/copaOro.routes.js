@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const partidos = require("../controller/copaOro");
+const partidos = require("../controller/copaOro.controller");
 
 router.get('/copaOro', partidos.getPartidos);
 

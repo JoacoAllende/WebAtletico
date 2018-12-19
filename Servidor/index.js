@@ -17,7 +17,8 @@ app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(require('./routes/equipos.routes'));
 app.use(require('./routes/grupo.routes'));
-app.use(require('./routes/octavosOro.routes'));
+app.use(require('./routes/copaOro.routes'));
+app.use(require('./routes/goleadores.routes'));
 
 //Starting the Server
 
