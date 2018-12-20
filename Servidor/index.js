@@ -19,6 +19,7 @@ app.use(require('./routes/equipos.routes'));
 app.use(require('./routes/grupo.routes'));
 app.use(require('./routes/copaOro.routes'));
 app.use(require('./routes/goleadores.routes'));
+app.use(require('./routes/copaPlata.routes'));
 
 //Starting the Server
 
