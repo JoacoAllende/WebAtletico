@@ -1,0 +1,21 @@
+<div class="container centrado">
+  <h1 class="text-center">GOLEADORES</h1>
+  <div class="espacio"></div>
+  <div>
+    <table class="table table-bordered table-striped">
+      <thead class="text-center">
+        <th>Jugador</th>
+        <th>Equipo</th>
+        <th>Goles</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let goleador of goleadoresService.goleadores">
+          <td>{{goleador.nombre}} {{goleador.apellido}}</td>
+          <td>{{goleador.equipo}}</td>
+          <td>{{goleador.goles}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="espacio"> </div>
+  </div>
+</div>

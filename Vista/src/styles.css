@@ -4,5 +4,45 @@ body {
     background: #bdc3c7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    font-family:  monospace,'Courier New', Courier; 
      }
+
+     .table {
+        border: 2px solid rgb(10, 5, 5);
+        background-color: hsl(0, 100%, 50%);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      th {
+          text-align: center;
+      }
+    
+      .table-bordered {
+        border: 2px solid black;
+      }
+      
+      th, td, tr {
+        border: 2px solid black;
+      }
+    
+      .centrado {
+          text-align: center;
+      }
+    
+      .table-striped tbody tr:nth-of-type(odd) {
+        background-color:white;
+        color: red;
+      }
+    
+      div h1 {
+        color: white;
+        font-weight: bold;
+      }
+    
+      .espacio {
+        height: 20px;
+      }
+    

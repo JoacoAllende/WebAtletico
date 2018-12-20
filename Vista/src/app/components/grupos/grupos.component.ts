@@ -20,7 +20,6 @@ export class GruposComponent implements OnInit {
     this.gruposService.getGrupos()
       .subscribe( res => {
         this.gruposService.grupos = res as Grupo[];
-        console.log(res);
       });
   }
 
