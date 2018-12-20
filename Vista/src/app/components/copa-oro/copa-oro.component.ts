@@ -20,7 +20,6 @@ export class CopaOroComponent implements OnInit {
     this.copaOroService.getInstancias()
       .subscribe(res => {
         this.copaOroService.instancias = res as Instancia[];
-        console.log(res);
       })
   }
 

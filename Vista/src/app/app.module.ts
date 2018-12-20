@@ -10,6 +10,7 @@ import { HttpClient } from 'selenium-webdriver/http';
 import { GruposComponent } from './components/grupos/grupos.component';
 import { CopaOroComponent } from './components/copa-oro/copa-oro.component';
 import { GoleadoresComponent } from './components/goleadores/goleadores.component';
+import { CopaPlataComponent } from './components/copa-plata/copa-plata.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { GoleadoresComponent } from './components/goleadores/goleadores.componen
     GruposComponent,
     CopaOroComponent,
     GoleadoresComponent,
+    CopaPlataComponent,
   ],
   imports: [
     BrowserModule,
