@@ -1,0 +1,191 @@
+CREATE DATABASE IF NOT EXISTS TorneoCopaCiudadDeAyacucho;
+
+USE TorneoCopaCiudadDeAyacucho;
+
+CREATE TABLE IF NOT EXISTS equipo (
+	id INT(2) NOT NULL AUTO_INCREMENT,
+	nombre VARCHAR(50) NOT NULL,
+	puntos INT(1) NOT NULL DEFAULT '0',
+	partidosJugados INT(1) NOT NULL DEFAULT '0',
+	partidosGanados INT(1) NOT NULL DEFAULT '0',
+	partidosEmpatados INT(1) NOT NULL DEFAULT '0',
+	partidosPerdidos INT(1) NOT NULL DEFAULT '0',
+	golesAFavor INT(2) NOT NULL DEFAULT '0',
+	golesEnContra INT(2) NOT NULL DEFAULT '0',
+	diferenciaGoles INT(2) NOT NULL DEFAULT '0',
+	golesEnContraTotal INT(2) NOT NULL DEFAULT '0',
+	grupo INT(1) NOT NULL,
+	cantAmarillas INT(2) NOT NULL DEFAULT '0',
+	cantRojas INT(2) NOT NULL DEFAULT '0',
+	año INT(4) NULL,
+	torneo BOOLEAN NULL, -- 0 es para el torneo nacional
+	PRIMARY KEY (id));
+
+CREATE TABLE IF NOT EXISTS goleadores (
+	id INT(3) NOT NULL AUTO_INCREMENT,
+	nombre VARCHAR(60) NOT NULL,
+	apellido VARCHAR(60) NOT NULL,
+	numero INT(2) NOT NULL,
+	goles INT(2) NOT NULL,
+	id_equipo INt(2) NOT NULL,
+	año INT(4) NULL,
+	torneo BOOLEAN NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (id_equipo) REFERENCES equipo(id));
+
+CREATE TABLE IF NOT EXISTS juega (
+	id_partido INT(2) NOT NULL AUTO_INCREMENT,
+	id_equipoUno INT(2) NOT NULL,
+	id_equipoDos INT(2) NOT NULL,
+	golesLocal INT(2) NULL DEFAULT '-1',
+	golesVisitante INT(2) NULL DEFAULT '-1',
+	penalesLocal INT(2) NULL DEFAULT '-1',
+	penalesVisitante INT(2) NULL DEFAULT '-1',
+	id_grupo INT(1) NULL,
+	instancia VARCHAR(3) NULL,
+	año INT(4) NULL,
+	torneo BOOLEAN NULL,
+	dia DATETIME NULL,
+	PRIMARY KEY (id_partido),
+	FOREIGN KEY (id_equipoUno) REFERENCES equipo(id),
+	FOREIGN KEY (id_equipoDos) REFERENCES equipo(id));
+
+-- pongo año y torneo para todos los equipos del nacional 2018
+UPDATE equipo SET año = 2018;
+UPDATE equipo SET torneo = 0;
+
+-- actualizo los goles total de cada equipo del torneo nacional 2018
+UPDATE equipo SET golesEnContraTotal = 3 WHERE id = 1;
+UPDATE equipo SET golesEnContraTotal = 4 WHERE id = 2;
+UPDATE equipo SET golesEnContraTotal = 14 WHERE id = 3;
+UPDATE equipo SET golesEnContraTotal = 4 WHERE id = 4;
+UPDATE equipo SET golesEnContraTotal = 3 WHERE id = 5;
+UPDATE equipo SET golesEnContraTotal = 14 WHERE id = 6;
+UPDATE equipo SET golesEnContraTotal = 7 WHERE id = 7;
+UPDATE equipo SET golesEnContraTotal = 18 WHERE id = 8;
+UPDATE equipo SET golesEnContraTotal = 0 WHERE id = 9;
+UPDATE equipo SET golesEnContraTotal = 11 WHERE id = 10;
+UPDATE equipo SET golesEnContraTotal = 20 WHERE id = 11;
+UPDATE equipo SET golesEnContraTotal = 18 WHERE id = 12;
+UPDATE equipo SET golesEnContraTotal = 5 WHERE id = 13;
+UPDATE equipo SET golesEnContraTotal = 15 WHERE id = 14;
+UPDATE equipo SET golesEnContraTotal = 9 WHERE id = 15;
+UPDATE equipo SET golesEnContraTotal = 12 WHERE id = 16;
+UPDATE equipo SET golesEnContraTotal = 2 WHERE id = 17;
+UPDATE equipo SET golesEnContraTotal = 10 WHERE id = 18;
+UPDATE equipo SET golesEnContraTotal = 9 WHERE id = 19;
+UPDATE equipo SET golesEnContraTotal = 9 WHERE id = 20;
+UPDATE equipo SET golesEnContraTotal = 4 WHERE id = 21;
+UPDATE equipo SET golesEnContraTotal = 19 WHERE id = 22;
+UPDATE equipo SET golesEnContraTotal = 14 WHERE id = 23;
+UPDATE equipo SET golesEnContraTotal = 6 WHERE id = 24;
+UPDATE equipo SET golesEnContraTotal = 5 WHERE id = 25;
+UPDATE equipo SET golesEnContraTotal = 29 WHERE id = 26;
+UPDATE equipo SET golesEnContraTotal = 19 WHERE id = 27;
+UPDATE equipo SET golesEnContraTotal = 6 WHERE id = 28;
+
+-- actualiza amarillas y rojas de cada equipo del nacional 2018
+UPDATE equipo SET cantAmarillas = 5, cantRojas = 0 WHERE id = 1;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 2;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 3;
+UPDATE equipo SET cantAmarillas = 2, cantRojas = 0 WHERE id = 4;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 5;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 6;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 7;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 8;
+UPDATE equipo SET cantAmarillas = 2, cantRojas = 0 WHERE id = 9;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 1 WHERE id = 10;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 11;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 12;
+UPDATE equipo SET cantAmarillas = 2, cantRojas = 1 WHERE id = 13;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 14;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 15;
+UPDATE equipo SET cantAmarillas = 2, cantRojas = 0 WHERE id = 16;
+UPDATE equipo SET cantAmarillas = 2, cantRojas = 1 WHERE id = 17;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 18;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 19;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 20;
+UPDATE equipo SET cantAmarillas = 2, cantRojas = 0 WHERE id = 21;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 22;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 23;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 24;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 25;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 26;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 27;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 28;
+
+-- agrego los partidos del torneo nacional del 2018
+INSERT INTO `juega` (`id_partido`, `id_equipoUno`, `id_equipoDos`, `golesLocal`, `golesVisitante`, `penalesLocal`, `penalesVisitante`, `id_grupo`, `instancia`) VALUES
+(1, 2, 4, 0, 1, -1, -1, 1, NULL),
+(2, 1, 3, 9, 0, -1, -1, 1, NULL),
+(3, 1, 2, 2, 0, -1, -1, 1, NULL),
+(4, 3, 4, 1, 4, -1, -1, 1, NULL),
+(5, 1, 4, 2, 0, -1, -1, 1, NULL),
+(6, 2, 3, 1, 0, -1, -1, 1, NULL),
+(7, 5, 7, 4, 1, -1, -1, 2, NULL),
+(8, 6, 8, 4, 1, -1, -1, 2, NULL),
+(9, 6, 7, 1, 0, -1, -1, 2, NULL),
+(10, 5, 8, 12, 1, -1, -1, 2, NULL),
+(11, 7, 8, 2, 2, -1, -1, 2, NULL),
+(12, 5, 6, 11, 0, -1, -1, 2, NULL),
+(13, 10, 11, 0, 3, -1, -1, 3, NULL),
+(14, 9, 12, 10, 0, -1, -1, 3, NULL),
+(15, 11, 12, 3, 3, -1, -1, 3, NULL),
+(16, 9, 10, 7, 0, -1, -1, 3, NULL),
+(17, 9, 11, 8, 0, -1, -1, 3, NULL),
+(18, 10, 12, 1, 1, -1, -1, 3, NULL),
+(19, 13, 14, 11, 0, -1, -1, 4, NULL),
+(20, 15, 16, 2, 0, -1, -1, 4, NULL),
+(21, 14, 15, 1, 3, -1, -1, 4, NULL),
+(22, 13, 16, 7, 0, -1, -1, 4, NULL),
+(23, 14, 16, 1, 1, -1, -1, 4, NULL),
+(24, 13, 15, 7, 0, -1, -1, 4, NULL),
+(25, 18, 19, 1, 1, -1, -1, 5, NULL),
+(26, 17, 20, 5, 0, -1, -1, 5, NULL),
+(27, 17, 18, 3, 0, -1, -1, 5, NULL),
+(28, 19, 20, 1, 0, -1, -1, 5, NULL),
+(29, 18, 20, 3, 0, -1, -1, 5, NULL),
+(30, 17, 19, 6, 0, -1, -1, 5, NULL),
+(31, 23, 24, 2, 3, -1, -1, 6, NULL),
+(32, 21, 22, 9, 0, -1, -1, 6, NULL),
+(33, 22, 23, 2, 0, -1, -1, 6, NULL),
+(34, 21, 24, 3, 0, -1, -1, 6, NULL),
+(35, 22, 24, 0, 0, -1, -1, 6, NULL),
+(36, 21, 23, 9, 0, -1, -1, 6, NULL),
+(37, 27, 28, 1, 0, -1, -1, 7, NULL),
+(38, 25, 26, 11, 0, -1, -1, 7, NULL),
+(39, 26, 27, 0, 8, -1, -1, 7, NULL),
+(40, 25, 28, 4, 1, -1, -1, 7, NULL),
+(41, 25, 27, 5, 0, -1, -1, 7, NULL),
+(42, 26, 28, 2, 7, -1, -1, 7, NULL),
+(43, 5, 22, 10, 0, -1, -1, NULL, 'o'),
+(44, 9, 19, 2, 0, -1, -1, NULL, 'o'),
+(45, 13, 11, 9, 0, -1, -1, NULL, 'o'),
+(46, 21, 24, 1, 1, 6, 5, NULL, 'o'),
+(47, 25, 18, 6, 0, -1, -1, NULL, 'o'),
+(48, 17, 6, 2, 0, -1, -1, NULL, 'o'),
+(49, 1, 15, 1, 0, -1, -1, NULL, 'o'),
+(50, 27, 4, 1, 0, -1, -1, NULL, 'o'),
+(51, 5, 27, 10, 0, -1, -1, NULL, 'c'),
+(52, 9, 1, 0, 0, 2, 3, NULL, 'c'),
+(53, 13, 17, 1, 3, -1, -1, NULL, 'c'),
+(54, 21, 25, 4, 1, -1, -1, NULL, 'c'),
+(55, 5, 21, 0, 0, 4, 5, NULL, 's'),
+(56, 1, 17, 1, 2, -1, -1, NULL, 's'),
+(57, 25, 27, 4, 0, -1, -1, NULL, '7'),
+(58, 9, 13, 2, 0, -1, -1, NULL, '5'),
+(59, 5, 1, 1, 1, 5, 3, NULL, 't'),
+(60, 21, 17, 0, 2, -1, -1, NULL, 'f'),
+(61, 28, 28, 0, 0, 1, 0, NULL, 'ccp'),
+(62, 2, 26, 4, 0, -1, -1, NULL, 'ccp'),
+(63, 12, 8, 0, 5, -1, -1, NULL, 'ccp'),
+(64, 7, 16, 2, 0, -1, -1, NULL, 'ccp'),
+(65, 28, 7, 0, 1, -1, -1, NULL, 'scp'),
+(66, 2, 8, 0, 1, -1, -1, NULL, 'scp'),
+(67, 7, 8, 1, 0, -1, -1, NULL, 'fcp');
+
+-- actualizo el año y el torneo para los partidos del torneo nacional 2018
+UPDATE juega SET año = 2018;
+UPDATE juega SET torneo = 0;
+
+-- cargo los goleadores del nacional de 2018

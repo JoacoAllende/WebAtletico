@@ -3,11 +3,13 @@
     <h1>{{instancia[0][0]}}</h1>
     <div>
       <table class="table table-bordered table-striped">
-        <thead><th>Equipo</th><th>Resultado</th><th>Equipo</th></thead>
+        <thead><th>Equipo</th><th>Penales</th><th>Resultado</th><th>Penales</th><th>Equipo</th></thead>
         <tbody>
           <tr *ngFor="let partido of instancia[1]">
             <td>{{partido.equipoUno}}</td>
+            <td>{{partido.penalesLocal}}</td>
             <td>{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
+            <td>{{partido.penalesVisitante}}</td>
             <td>{{partido.equipoDos}}</td>
           </tr>
         </tbody>
