@@ -8,7 +8,7 @@
           <tbody>
             <tr *ngFor="let partido of instancia[1]">
                 <td>{{partido.equipoUno}}</td>
-                <td *ngIf="partido.equipoUno != partido.equipoDos;" *ngIf="partido.penalesLocal != -1; else noPenales">{{partido.penalesLocal}}</td>
+                <td *ngIf="partido.penalesLocal != -1; else noPenales">{{partido.penalesLocal}}</td>
                 <td>{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
                 <td *ngIf="partido.penalesVisitante != -1; else noPenales">{{partido.penalesVisitante}}</td>
                 <ng-template #noPenales> - </ng-template>

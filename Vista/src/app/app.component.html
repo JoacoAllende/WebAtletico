@@ -6,17 +6,17 @@
     </div>
     <div class="container">
         <div class="btn-group">
-            <button type="button" class="btn btn-default">Inicio</button>
+            <button (click)="(cambiarRuta('inicio'))" type="button" class="btn btn-default">Inicio</button>
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                 Torneo Nacional <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Fase de grupos</a></li>
-                <li><a href="#">Copa de oro</a></li>
-                <li><a href="#">Copa de plata</a></li>
-                <li><a href="#">Goleadores</a></li>
+                <li><a href="#" (click)="cambiarRuta('grupos')">Fase de grupos</a></li>
+                <li><a href="#" (click)="cambiarRuta('copaOro')">Copa de oro</a></li>
+                <li><a href="#" (click)="cambiarRuta('copaPlata')">Copa de plata</a></li>
+                <li><a href="#" (click)="cambiarRuta('goleadores')">Goleadores</a></li>
             </ul>
         </div>
         <div class="btn-group">
@@ -48,5 +48,15 @@
     <h1>Torneo Internacional de Fútbol Infantil</h1>
     <h2>Copa Ciudad de Ayacucho</h2>
 </div>
-
-<app-copa-plata></app-copa-plata>
+<div *ngIf="globalService.ruta == 'grupos'">
+    <app-grupos></app-grupos>
+</div>
+<div *ngIf="globalService.ruta == 'copaOro'">
+    <app-copa-oro></app-copa-oro>
+</div>
+<div *ngIf="globalService.ruta == 'copaPlata'">
+    <app-copa-plata></app-copa-plata>
+</div>
+<div *ngIf="globalService.ruta == 'goleadores'">
+    <app-goleadores></app-goleadores>
+</div>
