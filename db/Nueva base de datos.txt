@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS equipo (
 	grupo INT(1) NOT NULL,
 	cantAmarillas INT(2) NOT NULL DEFAULT '0',
 	cantRojas INT(2) NOT NULL DEFAULT '0',
-	a�o INT(4) NULL,
+	año INT(4) NULL,
 	torneo BOOLEAN NULL, -- 0 es para el torneo nacional
 	PRIMARY KEY (id));
 
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS goleadores (
 	numero INT(2) NOT NULL,
 	goles INT(2) NOT NULL,
 	id_equipo INt(2) NOT NULL,
-	a�o INT(4) NULL,
+	año INT(4) NULL,
 	torneo BOOLEAN NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_equipo) REFERENCES equipo(id));
@@ -43,15 +43,46 @@ CREATE TABLE IF NOT EXISTS juega (
 	penalesVisitante INT(2) NULL DEFAULT '-1',
 	id_grupo INT(1) NULL,
 	instancia VARCHAR(3) NULL,
-	a�o INT(4) NULL,
+	año INT(4) NULL,
 	torneo BOOLEAN NULL,
 	dia DATETIME NULL,
 	PRIMARY KEY (id_partido),
 	FOREIGN KEY (id_equipoUno) REFERENCES equipo(id),
 	FOREIGN KEY (id_equipoDos) REFERENCES equipo(id));
 
--- pongo a�o y torneo para todos los equipos del nacional 2018
-UPDATE equipo SET a�o = 2018;
+-- ingreso equipos del torneon nacional 2018
+INSERT INTO `equipo` (`id`, `nombre`, `puntos`, `partidosJugados`, `partidosGanados`, `partidosEmpatados`, `partidosPerdidos`, `golesAFavor`, `golesEnContra`, `diferenciaGoles`, `grupo`) VALUES
+	(1, 'Club de Gimnasia y Esgrima La Plata A.F.A.', 9, 3, 3, 0, 0, 13, 0, 13, 1),
+	(2, 'Club Atlético Ayacucho', 3, 3, 1, 0, 2, 1, 3, -2, 1),
+	(3, 'Club Atlético Jorge Newbery (Maipú)', 0, 3, 0, 0, 3, 1, 14, -13, 1),
+	(4, 'Club Social y Deportivo El Fortín ', 6, 3, 2, 0, 1, 5, 3, 2, 1),
+	(5, 'Club Atlético Vélez Sarsfield A.F.A.', 9, 3, 3, 0, 0, 27, 2, 25, 2),
+	(6, 'Club Defensores (Ayacucho)', 6, 3, 2, 0, 1, 5, 12, -7, 2),
+	(7, 'Club Deportivo El León ', 1, 3, 0, 1, 2, 3, 7, -4, 2),
+	(8, 'Club Embajadores de Olavarría', 1, 3, 0, 1, 2, 4, 18, -14, 2),
+	(9, 'Club Atlético Banfield A.F.A.', 9, 3, 3, 0, 0, 25, 0, 25, 3),
+	(10, 'Club de Gimnasia y Esgrima de Tandil ', 1, 3, 0, 1, 2, 1, 11, -10, 3),
+	(11, 'Club Sportivo Trabajo (Balcarce)', 4, 3, 1, 1, 1, 6, 11, -5, 3),
+	(12, ' C.A.F.A. (Moreno)', 2, 3, 0, 2, 1, 4, 14, -10, 3),
+	(13, 'Club Estudiantes de la Plata A.F.A', 9, 3, 3, 0, 0, 25, 0, 25, 4),
+	(14, 'Pequeños Talentos (Rauch)', 1, 3, 0, 1, 2, 2, 15, -13, 4),
+	(15, 'Club Atlético Quilmes (Mar del Plata)', 6, 3, 2, 0, 1, 5, 8, -3, 4),
+	(16, 'Club Social y Deportivo Pinamar', 1, 3, 0, 1, 2, 1, 10, -9, 4),
+	(17, 'Racing Club de Avellaneda A.F.A.', 9, 3, 3, 0, 0, 14, 0, 14, 5),
+	(18, 'Club Atlético Ferrocarril Sud (Tandil)', 4, 3, 1, 1, 1, 4, 4, 0, 5),
+	(19, 'Club Deportivo Juventud Unida', 4, 3, 1, 1, 1, 2, 7, -5, 5),
+	(20, 'Club Atlético Chascomús ', 0, 3, 0, 0, 3, 0, 9, -9, 5),
+	(21, 'Club Atlético Boca Juniors A.F.A.', 9, 3, 3, 0, 0, 21, 0, 21, 6),
+	(22, 'Club Independiente (Tandil)', 4, 3, 1, 1, 1, 2, 9, -7, 6),
+	(23, 'Club Atlético Alvarado (Mar del Plata)', 0, 3, 0, 0, 3, 2, 14, -12, 6),
+	(24, 'Club Atlético Estudiantes (Olavarría)', 4, 3, 1, 1, 1, 3, 5, -2, 6),
+	(25, 'Club Nacional de Fútbol (Uruguay)', 9, 3, 3, 0, 0, 20, 1, 19, 7),
+	(26, 'Club Excursionistas Tandil', 0, 3, 0, 0, 3, 2, 26, -24, 7),
+	(27, 'Club Atlético Independiente (Mar del Plata)', 6, 3, 2, 0, 1, 9, 5, 4, 7),
+	(28, 'Club Ferrocarril Roca (Las Flores)', 3, 3, 1, 0, 2, 8, 7, 1, 7);
+
+-- pongo año y torneo para todos los equipos del nacional 2018
+UPDATE equipo SET año = 2018;
 UPDATE equipo SET torneo = 0;
 
 -- actualizo los goles total de cada equipo del torneo nacional 2018
@@ -184,8 +215,289 @@ INSERT INTO `juega` (`id_partido`, `id_equipoUno`, `id_equipoDos`, `golesLocal`,
 (66, 2, 8, 0, 1, -1, -1, NULL, 'scp'),
 (67, 7, 8, 1, 0, -1, -1, NULL, 'fcp');
 
--- actualizo el a�o y el torneo para los partidos del torneo nacional 2018
-UPDATE juega SET a�o = 2018;
+-- actualizo el año y el torneo para los partidos del torneo nacional 2018
+UPDATE juega SET año = 2018;
 UPDATE juega SET torneo = 0;
 
 -- cargo los goleadores del nacional de 2018
+INSERT INTO `goleadores` (`id`, `nombre`, `apellido`, `numero`, `goles`, `id_equipo`) VALUES
+(1, 'Raul Ignacio', 'Cabral', 9, 15, 5),
+(2, 'Ezequiel', 'Nicolini', 7, 12, 25),
+(3, 'Lautaro', 'Castaño', 11, 11, 5),
+(4, 'Kevin Joel', 'Brito', 16, 9, 5),
+(5, 'Gianluca', 'Bosch', 17, 7, 5),
+(6, 'Lautaro', 'Ahumada ', 7, 6, 5),
+(7, 'Mateo', 'Comba', 9, 9, 25),
+(8, 'Mauricio', 'Roldán', 11, 6, 9),
+(9, 'Santiago Valentín', 'Gonzales', 10, 5, 9),
+(10, 'Octavio', 'Casalongue', 16, 5, 17),
+(11, 'Juan Pablo', 'Arango Rolfi', 10, 5, 13),
+(12, 'Nahuel', 'Simón', 9, 4, 15),
+(13, 'Lucas Nicolás', 'Parera', 7, 4, 9),
+(14, 'Luciano', 'Días ', 10, 4, 17),
+(15, 'Nicolás', 'Mitic Flores', 9, 4, 1),
+(16, 'Nehuén', 'Benedetti', 14, 4, 13),
+(17, 'Sebastián', 'Traverso', 4, 3, 13),
+(18, 'Martín', 'Naser', 16, 3, 13),
+(19, 'Luca', 'Landriel', 11, 4, 13),
+(20, 'Thiago Valentín', 'Rolón', 8, 4, 21),
+(21, 'Santiago', 'Peralta', 11, 3, 25),
+(22, 'Thiago', 'Taboada', 9, 3, 17),
+(23, 'Alex', 'Costa', 2, 3, 28),
+(24, 'Agustín', 'Suárez', 14, 3, 25),
+(25, 'Víctor Hugo', 'Galeano', 7, 3, 21),
+(26, 'Thomas', 'Mielniczuk', 6, 3, 1),
+(27, 'Juan Cruz', 'Vergara', 7, 2, 1),
+(28, 'Martín', 'Paz', 11, 3, 6),
+(29, 'Mateo', 'Miglino', 15, 3, 5),
+(30, 'Teo', 'Gómez ', 11, 3, 11),
+(31, 'Facundo Nahuel', 'Roemo', 8, 3, 9),
+(32, 'Lautaro Uriel', 'Peralta', 9, 3, 9),
+(33, 'Nicolás Emanuel', 'Rojas', 16, 2, 9),
+(34, 'Adrián Benjamín', 'Lucero Alaggio', 14, 2, 9),
+(35, 'Juan Pablo', 'Moreno', 10, 3, 21),
+(36, 'Tomás Joel', 'López', 11, 3, 21),
+(37, 'Juan Segundo', 'Larrivey', 7, 2, 13),
+(38, 'Gano Genaro', 'Galarza', 5, 2, 13),
+(39, 'Tiziano', 'Sanmartino', 3, 2, 13),
+(40, 'Fabián', 'Massón', 9, 2, 28),
+(41, 'Wenceslao', 'Cordomi', 11, 2, 28),
+(42, 'Nicolás', 'Lombardi', 9, 2, 7),
+(43, 'Juan Martín', 'Herrera ', 11, 2, 7),
+(44, 'Santino', 'Sacchi', 11, 2, 8),
+(45, 'Elías', 'Ferreyra', 9, 2, 8),
+(46, 'Ramiro', 'Macarrone', 3, 2, 17),
+(47, 'Mateo', 'Gutiérrez', 14, 2, 17),
+(48, 'Tomás', 'Arburua', 12, 2, 17),
+(49, 'Tomás Alejandro', 'López', 13, 2, 4),
+(50, 'Tobías', 'Ferrari ', 10, 2, 18),
+(51, 'Lucas', 'Dietzel', 17, 2, 8),
+(52, 'Faustino', 'De Vito ', 4, 2, 5),
+(53, 'Matías', 'Guerra', 6, 2, 27),
+(54, 'Santiago', 'Ronda Laborde', 11, 2, 27),
+(55, 'Juan Francisco', 'Vázquez Vizmara', 9, 2, 11),
+(56, 'Diego', 'Rivas Urriza', 9, 2, 4),
+(57, 'Marco', 'Miguens', 13, 2, 13),
+(58, 'Santiago', 'Tobar', 15, 2, 13),
+(59, 'Carlos', 'Otazu Fariña', 9, 2, 13),
+(60, 'Agustín', 'Camplone', 14, 2, 24),
+(61, 'Luca', 'Crivelli', 10, 1, 24),
+(62, 'Jhoan', 'Cardozo', 8, 2, 25),
+(63, 'Exequias', 'Zapata', 11, 2, 17),
+(64, 'Tiago', 'González ', 15, 2, 17),
+(65, 'Gastón', 'Galeano', 8, 2, 7),
+(66, 'Simón', 'Frías ', 8, 2, 19),
+(67, 'Lucas', 'Lazarte', 9, 2, 18),
+(68, 'Joshua Nicolás', 'Portillo', 6, 2, 21),
+(69, 'Iván', 'Álvarez ', 9, 2, 6),
+(70, 'Ezequiel', 'Gregnoli', 10, 2, 12),
+(71, 'Lucio', 'Vázquez', 16, 2, 1),
+(72, 'Simón', 'Meza', 10, 2, 1),
+(73, 'Homero', 'Dobal', 10, 1, 2),
+(74, 'Tomás Valentín', 'Velázquez ', 14, 1, 9),
+(75, 'Santiago Elías', 'Acosta', 3, 1, 9),
+(76, 'Agustín', 'López', 5, 1, 9),
+(77, 'Octavio Nahuel', 'Díaz', 13, 1, 9),
+(78, 'Ciro', 'López ', 11, 1, 23),
+(79, 'Thiago', 'Pintado', 13, 1, 25),
+(80, 'Mathias', 'Albistur', 17, 1, 25),
+(81, 'Alessandro', 'Scarpa', 5, 1, 10),
+(82, 'Gonzalo', 'Bustamante ', 10, 1, 27),
+(83, 'Joaquín', 'Contino', 11, 1, 2),
+(84, 'Rufino', 'Cordero', 13, 1, 2),
+(85, 'Francisco', 'Diz', 15, 1, 2),
+(86, 'Nahuel', 'Parenti', 10, 1, 22),
+(87, 'Emanuel', 'Pica', 5, 1, 4),
+(88, 'Enzo', 'Carrera', 7, 1, 8),
+(89, 'Tomás', 'Bustos', 14, 1, 8),
+(90, 'Nahuel Fernando', 'Lamorte', 6, 1, 11),
+(91, 'Tiziano', 'Godoy', 5, 1, 1),
+(92, 'Nicolás', 'Coceres', 8, 1, 1),
+(93, 'Juan Ignacio', 'Canale', 6, 1, 13),
+(94, 'Gianni', 'Dislacio', 4, 1, 24),
+(95, 'Román', 'Salazar', 4, 1, 21),
+(96, 'Franco', 'Bortolin', 18, 1, 12),
+(97, 'Alexis', 'Servia Leguizamón', 12, 1, 12),
+(98, 'Kevin', 'González Vargas', 14, 1, 5),
+(99, 'Dylan', 'Meaca', 5, 1, 14),
+(100, 'Jerónimo', 'Sosa', 6, 1, 15),
+(101, 'Tobías', 'Zapata', 9, 1, 22),
+(102, 'Juan José', 'Teriaca ', 8, 1, 27),
+(103, 'Mateo', 'Becci Trama', 9, 1, 27),
+(104, 'Ramiro', 'Cabranes', 7, 1, 27),
+(105, 'Augusto', 'Ruis', 13, 1, 27),
+(106, 'Joaquín', 'Mandiola', 3, 1, 27),
+(107, 'Thomas', 'Scolari', 2, 1, 13),
+(108, 'Fabricio', 'Ventresca', 9, 1, 21),
+(109, 'Lautaro', 'Napolitano', 11, 1, 1),
+(110, 'Joaquín', 'Soria ', 13, 1, 17),
+(111, 'Tobías', 'Zapata', 9, 1, 23),
+(112, 'Ezequiel Agustín', 'Raineri', 7, 1, 16),
+(113, 'Gaspar', 'Conde Etchebarne', 2, 1, 14),
+(114, 'Lautaro Omar', 'Sosa', 6, 1, 7),
+(115, 'Nelson', 'Franco', 5, 1, 28),
+(116, 'Benjamín', 'Andolfatti', 2, 1, 26),
+(117, 'Tobías', 'López', 10, 1, 26),
+(118, 'Martiniano', 'Iralur', 5, 1, 2);
+
+-- actualizo el año y torneo de los equipos del nacional 2018
+UPDATE goleadores SET año = 2018;
+UPDATE goleadores SET torneo = 0;
+
+-- ingreso los equipos del paralelo 2018
+INSERT INTO `equipo` (`nombre`, `puntos`, `partidosJugados`, `partidosGanados`, `partidosEmpatados`, `partidosPerdidos`, `golesAFavor`, `golesEnContra`, `diferenciaGoles`, `grupo`) VALUES
+('Club Social y Deportivo El Fortín ', 6, 3, 2, 0, 1, 8, 1, 7, 1),
+('Club Deportivo El León ', 4, 3, 1, 1, 1, 3, 2, 1, 1),
+('Club Excursionistas Tandil', 0, 3, 0, 0, 3, 0, 15, -15, 1),
+('Club Ferrocarril Roca (Las Flores)', 7, 3, 2, 1, 0, 8, 1, 7, 1),
+('Club Atlético Estudiantes (Olavarría)', 3, 3, 1, 0, 2, 3, 6, -3, 2),
+('Club Sarmiento (Ayacucho)', 0, 3, 0, 0, 3, 0, 6, -6, 2),
+('Club Independiente (Tandil)', 6, 3, 2, 0, 1, 4, 1, 3, 2),
+('Club Atlético Independiente (Mar del Plata)', 9, 3, 3, 0, 0, 7, 1, 6, 2),
+('Club Alumni Azuleño', 6, 3, 2, 0, 1, 4, 1, 3, 3),
+('Club Defensores (Ayacucho)', 3, 3, 1, 0, 2, 2, 4, -2, 3),
+('Club Atlético Ferrocarril Sud (Tandil)', 1, 3, 0, 1, 2, 0, 5, -5, 3),
+('Club Atlético Quilmes (Mar del Plata)', 7, 3, 2, 1, 0, 4, 0, 4, 3),
+('Club Atlético Ayacucho', 9, 3, 3, 0, 0, 9, 0, 9, 4),
+('Club Deportivo Juevntud Unida', 0, 3, 0, 0, 3, 0, 8, -8, 4),
+('Club de Gimnasia y Esgrima de Tandil', 6, 3, 2, 0, 1, 5, 3, 2, 4),
+('Club Atlético Jorge Newbery', 3, 3, 1, 0, 2, 3, 6, -3, 4);
+
+-- actualizo el año y el torneo de los equipos del paralelo 2018
+UPDATE equipo SET torneo = 1 WHERE año IS NULL;
+UPDATE equipo SET año = 2018;
+
+-- actualizo los goles en contra total de los equipos del torneo paralelo 2018
+UPDATE equipo SET golesEnContraTotal = 1 WHERE id = 29;
+UPDATE equipo SET golesEnContraTotal = 0 WHERE id = 30;
+UPDATE equipo SET golesEnContraTotal = 15 WHERE id = 31;
+UPDATE equipo SET golesEnContraTotal = 3 WHERE id = 32;
+UPDATE equipo SET golesEnContraTotal = 6 WHERE id = 33;
+UPDATE equipo SET golesEnContraTotal = 6 WHERE id = 34;
+UPDATE equipo SET golesEnContraTotal = 4 WHERE id = 35;
+UPDATE equipo SET golesEnContraTotal = 3 WHERE id = 36;
+UPDATE equipo SET golesEnContraTotal = 3 WHERE id = 37;
+UPDATE equipo SET golesEnContraTotal = 5 WHERE id = 38;
+UPDATE equipo SET golesEnContraTotal = 5 WHERE id = 39;
+UPDATE equipo SET golesEnContraTotal = 0 WHERE id = 40;
+UPDATE equipo SET golesEnContraTotal = 6 WHERE id = 41;
+UPDATE equipo SET golesEnContraTotal = 8 WHERE id = 42;
+UPDATE equipo SET golesEnContraTotal = 6 WHERE id = 43;
+UPDATE equipo SET golesEnContraTotal = 6 WHERE id = 44;
+
+-- actualiza amarillas y rojas de cada equipo del paralelo 2018
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 29;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 30;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 31;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 32;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 33;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 34;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 35;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 36;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 37;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 38;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 39;
+UPDATE equipo SET cantAmarillas = 1, cantRojas = 0 WHERE id = 40;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 41;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 42;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 43;
+UPDATE equipo SET cantAmarillas = 0, cantRojas = 0 WHERE id = 44;
+
+-- agrego los partidos del torneo paralelo 2018
+INSERT INTO `juega` (`id_equipoUno`, `id_equipoDos`, `golesLocal`, `golesVisitante`, `penalesLocal`, `penalesVisitante`, `id_grupo`, `instancia`) VALUES
+(1, 4, 0, 1, -1, -1, 1, NULL),
+(2, 3, 2, 0, -1, -1, 1, NULL),
+(3, 4, 0, 6, -1, -1, 1, NULL),
+(1, 2, 1, 0, -1, -1, 1, NULL),
+(2, 4, 1, 1, -1, -1, 1, NULL),
+(1, 3, 7, 0, -1, -1, 1, NULL),
+(5, 8, 1, 4, -1, -1, 2, NULL),
+(6, 7, 0, 2, -1, -1, 2, NULL),
+(5, 6, 2, 0, -1, -1, 2, NULL),
+(5, 7, 0, 2, -1, -1, 2, NULL),
+(6, 8, 0, 2, -1, -1, 2, NULL),
+(7, 8, 0, 1, -1, -1, 2, NULL),
+(11, 12, 0, 0, -1, -1, 3, NULL),
+(9, 10, 1, 0, -1, -1, 3, NULL),
+(9, 12, 0, 1, -1, -1, 3, NULL),
+(10, 11, 2, 0, -1, -1, 3, NULL),
+(9, 11, 3, 0, -1, -1, 3, NULL),
+(10, 12, 0, 3, -1, -1, 3, NULL),
+(14, 15, 0, 3, -1, -1, 4, NULL),
+(13, 16, 4, 0, -1, -1, 4, NULL),
+(14, 16, 0, 2, -1, -1, 4, NULL),
+(15, 16, 2, 1, -1, -1, 4, NULL),
+(13, 14, 3, 0, -1, -1, 4, NULL),
+(13, 15, 2, 0, -1, -1, 4, NULL),
+(13, 15, 3, 0, -1, -1, NULL, 'c'),
+(8, 9, 2, 0, -1, -1, NULL, 'c'),
+(4, 7, 2, 2, 1, 2, NULL, 'c'),
+(12, 1, 0, 0, 2, 0, NULL, 'c'),
+(13, 12, 0, 3, -1, -1, NULL, 's'),
+(8, 7, 1, 0, -1, -1, NULL, 's'),
+(13, 7, 0, 3, -1, -1, NULL, 't'),
+(12, 8, 2, 0, -1, -1, NULL, 'f'),
+(2, 2, 0, 0, 1, 0, NULL, 'scp'),
+(10, 5, 0, 1, -1, -1, NULL, 'scp'),
+(2, 5, 0, 0, 1, 0, NULL, 'fcp');
+
+-- actualizo el año y el torneo para los partidos del torneo paralelo 2018
+UPDATE juega SET año = 2018;
+UPDATE juega SET torneo = 1 WHERE torneo IS NULL;
+
+-- cargo los goleadores del paralelo de 2018
+INSERT INTO `goleadores` (`nombre`, `apellido`, `numero`, `goles`, `id_equipo`) VALUES
+('Nasif', 'Elia', 9, 5, 40),
+('Valentín', 'Capuano Torres', 10, 2, 40),
+('Franco', 'Bonilauri', 14, 1, 40),
+('Benjamín', 'Villaryel', 11, 1, 40),
+('Patricio', 'Peñalva', 11, 4, 32),
+('David', 'Juárez', 8, 4, 36),
+('Fermín', 'Loengo', 10, 2, 36),
+('Leonel Adrián', 'Sández', 3, 2, 36),
+('Tobías ', 'Castellano', 15, 1, 36),
+('Agustín', 'Acosta', 10, 3, 41),
+('Martín Maximiliano', 'Suárez ', 8, 2, 41),
+('Juan', 'Pelegrini Gomila', 15, 2, 41),
+('Lisandro', 'De Arrieta Mazza ', 5, 1, 41),
+('Xanti', 'Urra', 14, 1, 41),
+('Enoc', 'Girado', 9, 3, 35),
+('Benjamín', 'Saenz', 8, 1, 35),
+('Valentino', 'Rivero', 14, 1, 35),
+('Baltasar', 'Anselmi', 2, 1, 35),
+('Joaquín', 'Camara', 9, 2, 43),
+('Thiago', 'Gadea', 7, 2, 29),
+('Lucas', 'Gómez', 5, 2, 29),
+('Fausto', 'Penacchionni', 6, 1, 33),
+('Juan Ignacio', 'Velázquez', 15, 1, 37),
+('Mateo Exequiel', 'Díaz', 9, 1, 37),
+('Santiago', 'Recci', 10, 1, 37),
+('Dylan', 'Russo', 10, 1, 32),
+('Laureano', 'Lamas', 22, 1, 32),
+('Valentín', 'Herrera ', 8, 1, 32),
+('Franco', 'Bortolotti', 10, 1, 29),
+('Lionel', 'Bustamante ', 2, 1, 29),
+('Agustín', 'Medina', 8, 1, 29),
+('Lautaro', 'López ', 3, 1, 29),
+('Hernán', 'La Frossia Harisgarat', 5, 1, 30),
+('Brian Ezequiel', 'Sánchez', 7, 1, 43),
+('Joaquín', 'Almaraz', 11, 1, 43),
+('Gonzalo', 'Cabalín', 10, 1, 43),
+('Gerónimo', 'Girolet', 7, 1, 35),
+('Pedro', 'Morel', 11, 1, 41),
+('Juan José', 'Amodeo', 2, 1, 41),
+('Manuel', 'Álvarez', 12, 1, 36),
+('Valentino', 'Vitali', 11, 1, 33),
+('Bautista', 'Serrano', 7, 1, 33),
+('Mateo', 'Novo', 8, 1, 33),
+('Martín', 'Freije Elorz', 9, 1, 44),
+('Joaquín', 'Peralta', 5, 1, 44),
+('Nicolás', 'Ferdara', 10, 1, 44),
+('Renzo', 'Ascat', 7, 1, 38),
+('Lautaro', 'Videla ', 5, 1, 38),
+('Diego', 'López', 7, 1, 37),
+('Valentín', 'Bianchimmi', 19, 1, 32);
+
+-- actualizo el año y torneo de los equipos del paralelo 2018
+UPDATE goleadores SET año = 2018;
+UPDATE goleadores SET torneo = 1 WHERE torneo IS NULL;
