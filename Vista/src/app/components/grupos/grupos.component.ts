@@ -17,7 +17,7 @@ export class GruposComponent implements OnInit {
   }
 
   getGrupos() {
-    this.gruposService.getGrupos()
+    this.gruposService.getGrupos(0,2018)
       .subscribe( res => {
         this.gruposService.grupos = res as Grupo[];
       });

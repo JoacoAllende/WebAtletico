@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Grupo } from '../models/grupo';
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 export class GruposService {
@@ -13,7 +13,7 @@ export class GruposService {
     this.grupos = [];
    }
 
-  getGrupos() {
-    return this.http.get('http://localhost:3000/grupos');
+  getGrupos(to, a) {
+    return this.http.get(`http://localhost:3000/grupos/${to}/${a}`);
   }
 }

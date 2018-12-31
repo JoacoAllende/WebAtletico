@@ -13,10 +13,10 @@
                 Torneo Nacional <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#" (click)="cambiarRuta('grupos')">Fase de grupos</a></li>
+                <li><a [routerLink]="['grupos/0/2018']" (click)="cambiarRuta('grupos')">Fase de grupos</a></li>
                 <li><a href="#" (click)="cambiarRuta('copaOro')">Copa de oro</a></li>
                 <li><a href="#" (click)="cambiarRuta('copaPlata')">Copa de plata</a></li>
-                <li><a href="#" (click)="cambiarRuta('goleadores')">Goleadores</a></li>
+                <li><a [routerLink]="['goleadores?to=0&a=2018']" (click)="cambiarRuta('goleadores')">Goleadores</a></li>
             </ul>
         </div>
         <div class="btn-group">

@@ -4,7 +4,7 @@ const mysqlConnection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'torneonacional2018'
+    database: 'torneocopaciudaddeayacucho'
 });
 
 mysqlConnection.connect(function(err){
