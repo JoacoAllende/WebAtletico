@@ -8,10 +8,14 @@ import { GruposService } from './services/grupos.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private globalService : GlobalService){}
+  constructor(private globalService : GlobalService, private gruposService : GruposService){}
 
   private cambiarRuta(ruta){
     this.globalService.ruta = ruta;
+  }
+
+  private getGrupos(to, a){
+    this.gruposService.getGrupos(to, a);
   }
 
   title = 'Vista';
