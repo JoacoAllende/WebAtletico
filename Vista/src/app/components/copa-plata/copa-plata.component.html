@@ -9,10 +9,11 @@
             <tr *ngFor="let partido of instancia[1]">
                 <td>{{partido.equipoUno}}</td>
                 <td *ngIf="partido.penalesLocal != -1; else noPenales">{{partido.penalesLocal}}</td>
-                <td>{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
+                <td *ngIf="partido.id_equipoUno != partido.id_equipoDos; else noPenales">{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
                 <td *ngIf="partido.penalesVisitante != -1; else noPenales">{{partido.penalesVisitante}}</td>
                 <ng-template #noPenales> - </ng-template>
-                <td>{{partido.equipoDos}}</td>
+                <td *ngIf="partido.id_equipoUno != partido.id_equipoDos; else libre">{{partido.equipoDos}}</td>
+                <ng-template #libre>LIBRE</ng-template>
             </tr>
           </tbody>
         </table>
