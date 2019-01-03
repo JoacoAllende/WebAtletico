@@ -8,12 +8,14 @@
           <tbody>
             <tr *ngFor="let partido of instancia[1]">
                 <td>{{partido.equipoUno}}</td>
-                <td *ngIf="partido.penalesLocal != -1; else noPenales">{{partido.penalesLocal}}</td>
+                <td *ngIf="partido.penalesLocal == -1 || partido.id_equipoUno == partido.id_equipoDos; else penalesUno"> - </td>
+                <ng-template #penalesUno><div style="margin: 9%;">{{partido.penalesLocal}}</div></ng-template>
                 <td *ngIf="partido.id_equipoUno != partido.id_equipoDos; else noPenales">{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
-                <td *ngIf="partido.penalesVisitante != -1; else noPenales">{{partido.penalesVisitante}}</td>
                 <ng-template #noPenales> - </ng-template>
+                <td *ngIf="partido.penalesVisitante == -1 || partido.id_equipoUno == partido.id_equipoDos; else penalesDos"> - </td>
+                <ng-template #penalesDos><div style="margin: 9%;">{{partido.penalesVisitante}}</div></ng-template>
                 <td *ngIf="partido.id_equipoUno != partido.id_equipoDos; else libre">{{partido.equipoDos}}</td>
-                <ng-template #libre>LIBRE</ng-template>
+                <ng-template #libre><div style="margin-top: 1.5%; margin-bottom: 1.5%">LIBRE</div></ng-template>
             </tr>
           </tbody>
         </table>
