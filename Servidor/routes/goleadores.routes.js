@@ -3,6 +3,6 @@ const router = express.Router();
 
 const goleadores = require("../controller/goleadores.controller");
 
-router.get('/goleadores', goleadores.getGoleadores);
+router.get('/goleadores/:to/:a', goleadores.getGoleadores);
 
 module.exports = router;

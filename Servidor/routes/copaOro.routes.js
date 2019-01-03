@@ -3,6 +3,6 @@ const router = express.Router();
 
 const partidos = require("../controller/copaOro.controller");
 
-router.get('/copaOro', partidos.getPartidos);
+router.get('/copaOro/:to/:a', partidos.getPartidos);
 
 module.exports = router;

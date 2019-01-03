@@ -49,16 +49,4 @@
     <h1>Torneo Internacional de Fútbol Infantil</h1>
     <h2>Copa Ciudad de Ayacucho</h2>
 </div>
-<div *ngIf="globalService.ruta == 'grupos'">
-    <app-grupos></app-grupos>
-</div>
-<div *ngIf="globalService.ruta == 'copaOro'">
-    <app-copa-oro></app-copa-oro>
-</div>
-<div *ngIf="globalService.ruta == 'copaPlata'">
-    <app-copa-plata></app-copa-plata>
-</div>
-<div *ngIf="globalService.ruta == 'goleadores'">
-    <app-goleadores></app-goleadores>
-</div>
 <router-outlet></router-outlet>

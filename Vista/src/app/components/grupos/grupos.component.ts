@@ -14,9 +14,6 @@ export class GruposComponent implements OnInit {
   constructor(private gruposService : GruposService, private rutaActiva : ActivatedRoute) { }
 
   ngOnInit() {
-    let año = this.rutaActiva.snapshot.params.año;
-    let torneo = this.rutaActiva.snapshot.paramMap.get('torneo');
-    this.getGrupos(torneo, año);
     this.rutaActiva.params.subscribe(
       (params: Params) => {
         let año = this.rutaActiva.snapshot.params.año;
