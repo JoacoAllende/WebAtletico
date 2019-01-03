@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CopaPlataService } from '../../services/copa-plata.service'
 import { Instancia } from 'src/app/models/instancia';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-copa-plata',
@@ -9,14 +10,20 @@ import { Instancia } from 'src/app/models/instancia';
 })
 export class CopaPlataComponent implements OnInit {
 
-  constructor(private copaPlataService : CopaPlataService) { }
+  constructor(private copaPlataService : CopaPlataService, private rutaActiva : ActivatedRoute) { }
 
   ngOnInit() {
-    this.getInstancias();
+    this.rutaActiva.params.subscribe(
+      (params: Params) => {
+        let año = this.rutaActiva.snapshot.params.año;
+        let torneo = this.rutaActiva.snapshot.params.torneo;
+        this.getInstancias(torneo, año);
+      }
+    );
   }
 
-  getInstancias(){
-    this.copaPlataService.getInstancias()
+  getInstancias(torneo, año){
+    this.copaPlataService.getInstancias(torneo, año)
       .subscribe(res => {
         this.copaPlataService.instancias = res as Instancia[];
       })

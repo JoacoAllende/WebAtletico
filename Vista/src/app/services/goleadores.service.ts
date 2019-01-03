@@ -13,7 +13,7 @@ export class GoleadoresService {
     this.goleadores = [];
    }
 
-   getGoleadores(){
-     return this.http.get('http://localhost:3000/goleadores');
+   getGoleadores(to, a){
+    return this.http.get(`http://localhost:3000/goleadores/${to}/${a}`);
    }
 }

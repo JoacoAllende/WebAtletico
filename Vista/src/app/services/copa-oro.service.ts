@@ -13,7 +13,7 @@ export class CopaOroService {
     this.instancias = [];
    }
 
-  getInstancias(){
-    return this.http.get('http://localhost:3000/copaOro');
+  getInstancias(to, a){
+    return this.http.get(`http://localhost:3000/copaOro/${to}/${a}`);
   }
 }

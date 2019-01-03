@@ -17,7 +17,7 @@ export class GruposComponent implements OnInit {
     this.rutaActiva.params.subscribe(
       (params: Params) => {
         let año = this.rutaActiva.snapshot.params.año;
-        let torneo = this.rutaActiva.snapshot.paramMap.get('torneo');
+        let torneo = this.rutaActiva.snapshot.params.torneo;
         this.getGrupos(torneo, año);
       }
     );

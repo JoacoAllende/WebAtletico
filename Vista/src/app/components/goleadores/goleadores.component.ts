@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GoleadoresService } from '../../services/goleadores.service'
 import { Goleador } from 'src/app/models/goleador';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-goleadores',
@@ -10,14 +11,20 @@ import { Goleador } from 'src/app/models/goleador';
 })
 export class GoleadoresComponent implements OnInit {
 
-  constructor(private goleadoresService : GoleadoresService) { }
+  constructor(private goleadoresService : GoleadoresService, private rutaActiva: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getGoleadores();
+    this.rutaActiva.params.subscribe(
+      (params: Params) => {
+        let año = this.rutaActiva.snapshot.params.año;
+        let torneo = this.rutaActiva.snapshot.params.torneo;
+        this.getGoleadores(torneo, año);
+      }
+    );
   }
 
-  getGoleadores(){
-    this.goleadoresService.getGoleadores()
+  getGoleadores(torneo, año){
+    this.goleadoresService.getGoleadores(torneo, año)
       .subscribe(res => {
         this.goleadoresService.goleadores = res as Goleador[]; 
       })

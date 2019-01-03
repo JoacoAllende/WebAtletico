@@ -13,7 +13,7 @@ export class CopaPlataService {
     this.instancias = [];
    }
 
-   getInstancias(){
-     return this.http.get('http://localhost:3000/copaPlata');
+   getInstancias(to, a){
+    return this.http.get(`http://localhost:3000/copaPlata/${to}/${a}`);
    }
 }

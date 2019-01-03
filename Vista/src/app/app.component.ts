@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GlobalService } from './services/global.service';
 import { GruposService } from './services/grupos.service';
 
 @Component({
@@ -8,11 +7,8 @@ import { GruposService } from './services/grupos.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private globalService : GlobalService, private gruposService : GruposService){}
+  constructor(private gruposService : GruposService){}
 
-  private cambiarRuta(ruta){
-    this.globalService.ruta = ruta;
-  }
 
   private getGrupos(to, a){
     this.gruposService.getGrupos(to, a);
