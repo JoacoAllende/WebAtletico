@@ -6,7 +6,7 @@
     </div>
     <div class="container">
         <div class="btn-group">
-            <button type="button" class="btn btn-default"><a [routerLink]="['/grupos','0','2018']">Inicio</a></button>
+            <button type="button" class="btn btn-default"><a [routerLink]="['inicio']" style="color: black">Inicio</a></button>
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -35,7 +35,17 @@
                     Torneos pasados <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Torneo nacional 2018</a></li>
+                    <li>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Torneos nacional 2018 <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-submenu">
+                            <li><a [routerLink]="['/grupos','0','2018']">Fase de grupos</a></li>
+                            <li><a [routerLink]="['/copaOro','0','2018']">Copa de oro</a></li>
+                            <li><a [routerLink]="['/copaPlata','0','2018']">Copa de plata</a></li>
+                            <li><a [routerLink]="['/goleadores','0','2018']">Goleadores</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Torneo paralelo 2018</a></li>
                 </ul>
             </div>

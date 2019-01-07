@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS goleadores (
 	apellido VARCHAR(60) NOT NULL,
 	numero INT(2) NOT NULL,
 	goles INT(2) NOT NULL,
-	id_equipo INt(2) NOT NULL,
+	id_equipo INT(2) NOT NULL,
 	año INT(4) NULL,
 	torneo BOOLEAN NULL,
 	PRIMARY KEY (id),

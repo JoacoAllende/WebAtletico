@@ -4,14 +4,16 @@ import { GruposComponent } from './components/grupos/grupos.component';
 import { GoleadoresComponent } from './components/goleadores/goleadores.component';
 import { CopaOroComponent } from './components/copa-oro/copa-oro.component';
 import { CopaPlataComponent } from './components/copa-plata/copa-plata.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 const routes: Routes = [
   
-  { path: 'inicio', component: GruposComponent },
+  { path: 'inicio', component: InicioComponent },
   { path: 'grupos/:torneo/:año', component: GruposComponent },
   { path: 'copaOro/:torneo/:año', component: CopaOroComponent },
   { path: 'copaPlata/:torneo/:año', component: CopaPlataComponent },
-  { path: 'goleadores/:torneo/:año', component: GoleadoresComponent }
+  { path: 'goleadores/:torneo/:año', component: GoleadoresComponent },
+  { path: '**', redirectTo: 'inicio'}
 ];
 
 @NgModule({

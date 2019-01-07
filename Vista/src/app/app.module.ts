@@ -11,6 +11,7 @@ import { GruposComponent } from './components/grupos/grupos.component';
 import { CopaOroComponent } from './components/copa-oro/copa-oro.component';
 import { GoleadoresComponent } from './components/goleadores/goleadores.component';
 import { CopaPlataComponent } from './components/copa-plata/copa-plata.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CopaPlataComponent } from './components/copa-plata/copa-plata.component
     CopaOroComponent,
     GoleadoresComponent,
     CopaPlataComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
