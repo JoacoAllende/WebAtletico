@@ -75,4 +75,19 @@ copaOroController.getPartidos = (req, res, next) => {
     })
 };
 
+copaOroController.getPartido = (req, res, next) => {
+    const query = 'SELECT * FROM juega WHERE id_partido = ' + req.params.id;
+    mysqlConnection.query(query, (err, rows, fields) =>{
+        res.json(rows);
+    })
+};
+
+copaOroController.editPartido = (req, res, next) => {
+    const partido = req.body;
+    const query = 'UPDATE juega SET golesLocal = ' + partido.golesLocal + ', golesVisitante = ' + partido.golesVisitante + ', penalesLocal = ' + partido.penalesLocal + ', penalesVisitante = ' + partido.penalesVisitante + ' WHERE id_partido  = ' + req.params.id;
+    mysqlConnection.query(query, (err, rows, fields) => {
+        res.json('updated');
+    })
+};
+
 module.exports = copaOroController;
