@@ -5,6 +5,7 @@ import { GoleadoresComponent } from './components/goleadores/goleadores.componen
 import { CopaOroComponent } from './components/copa-oro/copa-oro.component';
 import { CopaPlataComponent } from './components/copa-plata/copa-plata.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ActualizarGoleadoresComponent } from './components/actualizar-goleadores/actualizar-goleadores.component';
 
 const routes: Routes = [
   
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'copaOro/:torneo/:año', component: CopaOroComponent },
   { path: 'copaPlata/:torneo/:año', component: CopaPlataComponent },
   { path: 'goleadores/:torneo/:año', component: GoleadoresComponent },
+  { path: 'goleadores/actualizar', component: ActualizarGoleadoresComponent },
   { path: '**', redirectTo: 'inicio'}
 ];
 

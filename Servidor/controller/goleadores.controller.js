@@ -18,6 +18,7 @@ goleadoresController.createGoleador = (req, res) => {
     const query = 'INSERT INTO goleadores (nombre, apellido, numero, goles, id_equipo, año, torneo) VALUES ("' + goleador.nombre + '","' + goleador.apellido + '",' + goleador.numero + ',' + goleador.goles + ',' + goleador.id_equipo + ',' + goleador.año + ',' + goleador.torneo + ')';
     mysqlConnection.query(query, (req, rows, fields) => {
         res.json({
+            query,
             'status' : 'received'
         })
     })

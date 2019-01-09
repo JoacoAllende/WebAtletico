@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http'
 
@@ -12,6 +13,7 @@ import { CopaOroComponent } from './components/copa-oro/copa-oro.component';
 import { GoleadoresComponent } from './components/goleadores/goleadores.component';
 import { CopaPlataComponent } from './components/copa-plata/copa-plata.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ActualizarGoleadoresComponent } from './components/actualizar-goleadores/actualizar-goleadores.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { InicioComponent } from './components/inicio/inicio.component';
     GoleadoresComponent,
     CopaPlataComponent,
     InicioComponent,
+    ActualizarGoleadoresComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

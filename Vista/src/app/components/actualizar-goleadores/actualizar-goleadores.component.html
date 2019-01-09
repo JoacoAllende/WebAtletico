@@ -1,0 +1,41 @@
+<div class="container">
+  <form role="form" #goleadorForm="ngForm">
+    <div class="form-group">
+      <label for="Nombre">Nombre</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="actualizarGoleadoresService.selectedGoleador.nombre" #nombre="ngModel" required
+             placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="Apellido">Apellido</label>
+      <input type="text" class="form-control" name="apellido" [(ngModel)]="actualizarGoleadoresService.selectedGoleador.apeliido" #apellido="ngModel" required
+             placeholder="Apellido">
+    </div>
+    <div class="form-group">
+      <label for="Numero">Numero</label>
+      <input type="number" class="form-control" name="numero" [(ngModel)]="actualizarGoleadoresService.selectedGoleador.numero" #numero="ngModel" required
+             placeholder="Numero">
+    </div>
+    <div class="form-group">
+      <label for="Goles">Goles</label>
+      <input type="number" class="form-control" name="goles" [(ngModel)]="actualizarGoleadoresService.selectedGoleador.goles" #goles="ngModel" required
+             placeholder="Goles">
+    </div>
+    <div class="form-group">
+      <label for="Equipo">Equipo</label>
+      <input type="text" class="form-control" name="equipo" [(ngModel)]="actualizarGoleadoresService.selectedGoleador.equipo" #equipo="ngModel" required
+             placeholder="Equipo">
+    </div>
+    <div class="form-group">
+      <label for="Torneo">Torneo</label>
+      <input type="number" class="form-control" name="torneo" [(ngModel)]="actualizarGoleadoresService.selectedGoleador.torneo" #torneo="ngModel" required
+             placeholder="Torneo">
+    </div>
+    <div class="form-group">
+      <label for="Año">Año</label>
+      <input type="number" class="form-control" name="año" [(ngModel)]="actualizarGoleadoresService.selectedGoleador.anio" #año="ngModel" required
+             placeholder="Año">
+    </div>
+    <button type="submit" class="btn btn-default" (click)="addGoleador(goleadorForm)">Enviar</button>
+    <button type="submit" class="btn btn-default" (click)="resetForm(goleadorForm)">Limpiar</button>
+  </form>
+</div>
