@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS equipo (
 	grupo INT(1) NOT NULL,
 	cantAmarillas INT(2) NOT NULL DEFAULT '0',
 	cantRojas INT(2) NOT NULL DEFAULT '0',
-	año INT(4) NULL,
+	anio INT(4) NULL,
 	torneo BOOLEAN NULL, -- 0 es para el torneo nacional
 	PRIMARY KEY (id));
 
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS goleadores (
 	numero INT(2) NOT NULL,
 	goles INT(2) NOT NULL,
 	id_equipo INt(2) NOT NULL,
-	año INT(4) NULL,
+	anio INT(4) NULL,
 	torneo BOOLEAN NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_equipo) REFERENCES equipo(id));
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS juega (
 	penalesVisitante INT(2) NULL DEFAULT '-1',
 	id_grupo INT(1) NULL,
 	instancia VARCHAR(3) NULL,
-	año INT(4) NULL,
+	anio INT(4) NULL,
 	torneo BOOLEAN NULL,
 	dia DATETIME NULL,
 	PRIMARY KEY (id_partido),

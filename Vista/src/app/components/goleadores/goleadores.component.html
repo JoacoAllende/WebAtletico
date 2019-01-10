@@ -7,15 +7,62 @@
         <th>Jugador</th>
         <th>Equipo</th>
         <th>Goles</th>
+        <th>Editar</th>
       </thead>
       <tbody>
         <tr *ngFor="let goleador of goleadoresService.goleadores">
           <td>{{goleador.nombre}} {{goleador.apellido}}</td>
           <td>{{goleador.equipo}}</td>
           <td>{{goleador.goles}}</td>
+          <td><a (click)="editGoleador(goleador)">
+            <i class="glyphicon-pencil"></i>
+          </a></td>
         </tr>
       </tbody>
     </table>
     <div class="espacio"> </div>
   </div>
+</div>
+
+<div class="container">
+  <form role="form" #goleadorForm="ngForm">
+    <input type="hidden" name="id" [(ngModel)]="goleadoresService.selectedGoleador.id" #id="ngModel" >
+    <div class="form-group">
+      <label for="Nombre">Nombre</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="goleadoresService.selectedGoleador.nombre" #nombre="ngModel" required
+             placeholder="Nombre">
+    </div>
+    <div class="form-group">
+      <label for="Apellido">Apellido</label>
+      <input type="text" class="form-control" name="apellido" [(ngModel)]="goleadoresService.selectedGoleador.apellido" #apellido="ngModel" required
+             placeholder="Apellido">
+    </div>
+    <div class="form-group">
+      <label for="Numero">Numero</label>
+      <input type="number" class="form-control" name="numero" [(ngModel)]="goleadoresService.selectedGoleador.numero" #numero="ngModel" required
+             placeholder="Numero">
+    </div>
+    <div class="form-group">
+      <label for="Goles">Goles</label>
+      <input type="number" class="form-control" name="goles" [(ngModel)]="goleadoresService.selectedGoleador.goles" #goles="ngModel" required
+             placeholder="Goles">
+    </div>
+    <div class="form-group">
+      <label for="Equipo">Equipo</label>
+      <input type="text" class="form-control" name="equipo" [(ngModel)]="goleadoresService.selectedGoleador.equipo" #equipo="ngModel" required
+             placeholder="Equipo">
+    </div>
+    <div class="form-group">
+      <label for="Torneo">Torneo</label>
+      <input type="number" class="form-control" name="torneo" [(ngModel)]="goleadoresService.selectedGoleador.torneo" #torneo="ngModel" required
+             placeholder="Torneo">
+    </div>
+    <div class="form-group">
+      <label for="Año">Year</label>
+      <input type="number" class="form-control" name="anio" [(ngModel)]="goleadoresService.selectedGoleador.anio" #anio="ngModel" required
+             placeholder="Año">
+    </div>
+    <button type="submit" class="btn btn-default" (click)="addGoleador(goleadorForm)">Enviar</button>
+    <button type="submit" class="btn btn-default" (click)="resetForm(goleadorForm)">Limpiar</button>
+  </form>
 </div>

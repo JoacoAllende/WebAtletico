@@ -8,9 +8,11 @@ import { Goleador } from '../models/goleador';
 export class GoleadoresService {
 
   goleadores : Goleador[];
+  selectedGoleador : Goleador;
 
   constructor(private http : HttpClient) {
     this.goleadores = [];
+    this.selectedGoleador = new Goleador;
    }
 
    getGoleadores(to, a){

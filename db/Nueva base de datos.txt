@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS equipo (
 	grupo INT(1) NOT NULL,
 	cantAmarillas INT(2) NOT NULL DEFAULT '0',
 	cantRojas INT(2) NOT NULL DEFAULT '0',
-	año INT(4) NULL,
+	anio INT(4) NULL,
 	torneo BOOLEAN NULL, -- 0 es para el torneo nacional
 	PRIMARY KEY (id));
 
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS goleadores (
 	numero INT(2) NOT NULL,
 	goles INT(2) NOT NULL,
 	id_equipo INT(2) NOT NULL,
-	año INT(4) NULL,
+	anio INT(4) NULL,
 	torneo BOOLEAN NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_equipo) REFERENCES equipo(id));
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS juega (
 	penalesVisitante INT(2) NULL DEFAULT '-1',
 	id_grupo INT(1) NULL,
 	instancia VARCHAR(3) NULL,
-	año INT(4) NULL,
+	anio INT(4) NULL,
 	torneo BOOLEAN NULL,
 	dia DATETIME NULL,
 	PRIMARY KEY (id_partido),
@@ -81,8 +81,8 @@ INSERT INTO `equipo` (`id`, `nombre`, `puntos`, `partidosJugados`, `partidosGana
 	(27, 'Club Atlético Independiente (Mar del Plata)', 6, 3, 2, 0, 1, 9, 5, 4, 7),
 	(28, 'Club Ferrocarril Roca (Las Flores)', 3, 3, 1, 0, 2, 8, 7, 1, 7);
 
--- pongo año y torneo para todos los equipos del nacional 2018
-UPDATE equipo SET año = 2018;
+-- pongo anio y torneo para todos los equipos del nacional 2018
+UPDATE equipo SET anio = 2018;
 UPDATE equipo SET torneo = 0;
 
 -- actualizo los goles total de cada equipo del torneo nacional 2018
@@ -216,7 +216,7 @@ INSERT INTO `juega` (`id_partido`, `id_equipoUno`, `id_equipoDos`, `golesLocal`,
 (67, 7, 8, 1, 0, -1, -1, NULL, 'fcp');
 
 -- actualizo el año y el torneo para los partidos del torneo nacional 2018
-UPDATE juega SET año = 2018;
+UPDATE juega SET anio = 2018;
 UPDATE juega SET torneo = 0;
 
 -- cargo los goleadores del nacional de 2018
@@ -341,7 +341,7 @@ INSERT INTO `goleadores` (`id`, `nombre`, `apellido`, `numero`, `goles`, `id_equ
 (118, 'Martiniano', 'Iralur', 5, 1, 2);
 
 -- actualizo el año y torneo de los equipos del nacional 2018
-UPDATE goleadores SET año = 2018;
+UPDATE goleadores SET anio = 2018;
 UPDATE goleadores SET torneo = 0;
 
 -- ingreso los equipos del paralelo 2018
@@ -364,8 +364,8 @@ INSERT INTO `equipo` (`nombre`, `puntos`, `partidosJugados`, `partidosGanados`, 
 ('Club Atlético Jorge Newbery', 3, 3, 1, 0, 2, 3, 6, -3, 4);
 
 -- actualizo el año y el torneo de los equipos del paralelo 2018
-UPDATE equipo SET torneo = 1 WHERE año IS NULL;
-UPDATE equipo SET año = 2018;
+UPDATE equipo SET torneo = 1 WHERE anio IS NULL;
+UPDATE equipo SET anio = 2018;
 
 -- actualizo los goles en contra total de los equipos del torneo paralelo 2018
 UPDATE equipo SET golesEnContraTotal = 1 WHERE id = 29;
@@ -442,7 +442,7 @@ INSERT INTO `juega` (`id_equipoUno`, `id_equipoDos`, `golesLocal`, `golesVisitan
 (30, 33, 0, 0, 1, 0, NULL, 'fcp');
 
 -- actualizo el año y el torneo para los partidos del torneo paralelo 2018
-UPDATE juega SET año = 2018;
+UPDATE juega SET anio = 2018;
 UPDATE juega SET torneo = 1 WHERE torneo IS NULL;
 
 -- cargo los goleadores del paralelo de 2018
@@ -499,5 +499,5 @@ INSERT INTO `goleadores` (`nombre`, `apellido`, `numero`, `goles`, `id_equipo`) 
 ('Valentín', 'Bianchimmi', 19, 1, 32);
 
 -- actualizo el año y torneo de los equipos del paralelo 2018
-UPDATE goleadores SET año = 2018;
+UPDATE goleadores SET anio = 2018;
 UPDATE goleadores SET torneo = 1 WHERE torneo IS NULL;

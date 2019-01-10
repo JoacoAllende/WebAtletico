@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GoleadoresService } from '../../services/goleadores.service'
 import { Goleador } from 'src/app/models/goleador';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -28,6 +29,24 @@ export class GoleadoresComponent implements OnInit {
       .subscribe(res => {
         this.goleadoresService.goleadores = res as Goleador[]; 
       })
+  }
+
+  addGoleador(form : NgForm){
+    /*this.goleadoresService.postGoleador(form.value)
+      .subscribe(res => {
+        console.log(res);
+      })*/
+  }
+
+  resetForm(form?: NgForm){
+    if(form){
+      form.reset();
+      this.goleadoresService.selectedGoleador = new Goleador();
+    }
+  }
+
+  editGoleador(goleador: Goleador){
+    this.goleadoresService.selectedGoleador = goleador;
   }
 
 }
