@@ -31,11 +31,11 @@ export class GoleadoresComponent implements OnInit {
       })
   }
 
-  addGoleador(form : NgForm){
-    /*this.goleadoresService.postGoleador(form.value)
+  addGoleador(torneo, año, form : NgForm){
+    this.goleadoresService.postGoleador(torneo, año, form.value)
       .subscribe(res => {
         console.log(res);
-      })*/
+      })
   }
 
   resetForm(form?: NgForm){

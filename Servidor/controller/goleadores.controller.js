@@ -15,11 +15,12 @@ goleadoresController.getGoleadores = (req, res, next) => {
 
 goleadoresController.createGoleador = (req, res) => {
     const goleador = req.body;
-    const query = 'INSERT INTO goleadores (nombre, apellido, numero, goles, id_equipo, año, torneo) VALUES ("' + goleador.nombre + '","' + goleador.apellido + '",' + goleador.numero + ',' + goleador.goles + ',' + goleador.id_equipo + ',' + goleador.año + ',' + goleador.torneo + ')';
-    mysqlConnection.query(query, (req, rows, fields) => {
+    console.log(goleador);
+    const query = 'INSERT INTO goleadores (nombre, apellido, numero, goles, id_equipo, anio, torneo) VALUES ("' + goleador.nombre + '","' + goleador.apellido + '",' + goleador.numero + ',' + goleador.goles + ',' + goleador.id_equipo + ',' + goleador.anio + ',' + goleador.torneo + ')';
+    console.log(query);
+    mysqlConnection.query(query, (req, rows, fields) => {        
         res.json({
-            query,
-            'status' : 'received'
+            'status' : 'goleador creado'
         })
     })
 };
@@ -33,7 +34,7 @@ goleadoresController.getGoleador = (req, res) => {
 
 goleadoresController.editGoleador = (req, res) => {
     const goleador = req.body;
-    const query = 'UPDATE goleadores SET nombre = "' + goleador.nombre + '", apellido = "' + goleador.apellido + '", numero = ' + goleador.numero + ', goles = ' + goleador.goles + ', id_equipo = ' + goleador.id_equipo + ', año = ' + goleador.año + ', torneo = ' + goleador.torneo + ' WHERE id = ' + req.params.id;
+    const query = 'UPDATE goleadores SET nombre = "' + goleador.nombre + '", apellido = "' + goleador.apellido + '", numero = ' + goleador.numero + ', goles = ' + goleador.goles + ' WHERE id = ' + req.params.id;
     mysqlConnection.query(query, (err, rows, fields) => {
         res.json('updated');
     })
