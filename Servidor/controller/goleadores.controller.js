@@ -34,7 +34,9 @@ goleadoresController.getGoleador = (req, res) => {
 
 goleadoresController.editGoleador = (req, res) => {
     const goleador = req.body;
-    const query = 'UPDATE goleadores SET nombre = "' + goleador.nombre + '", apellido = "' + goleador.apellido + '", numero = ' + goleador.numero + ', goles = ' + goleador.goles + ' WHERE id = ' + req.params.id;
+    console.log(goleador);
+    const query = 'UPDATE goleadores SET nombre = "' + goleador.nombre + '", apellido = "' + goleador.apellido + '", numero = ' + goleador.numero + ', goles = ' + goleador.goles + ' WHERE id = ' + goleador.id;
+    console.log(query);
     mysqlConnection.query(query, (err, rows, fields) => {
         res.json('updated');
     })

@@ -20,7 +20,7 @@ export class GoleadoresService {
    }
 
    putGoleador(to, a, goleador: Goleador){
-    return this.http.put(`http://localhost:3000/goleadores/${to}/${a}` + `/${goleador.id}`,goleador);
+    return this.http.put(`http://localhost:3000/goleadores/${to}/${a}`,goleador);
    }
 
    getGoleadores(to, a){
