@@ -50,6 +50,17 @@ CREATE TABLE IF NOT EXISTS juega (
 	FOREIGN KEY (id_equipoUno) REFERENCES equipo(id),
 	FOREIGN KEY (id_equipoDos) REFERENCES equipo(id));
 
+CREATE TABLE IF NOT EXISTS usuarios (
+	id_usuario INT(2) NOT NULL AUTO_INCREMENT,
+	username VARCHAR(16) NOT NULL,
+	password VARCHAR(60) NOT NULL,
+	fullname VARCHAR(100) NOT NULL,
+	PRIMARY KEY (id_usuario)
+);
+
+INSERT INTO usuarios (id_usuario, username, password, fullname) 
+VALUES (1, 'joaco', '1234567ocho', 'Joaquin Allende');
+
 -- ingreso equipos del torneon nacional 2018
 INSERT INTO `equipo` (`id`, `nombre`, `puntos`, `partidosJugados`, `partidosGanados`, `partidosEmpatados`, `partidosPerdidos`, `golesAFavor`, `golesEnContra`, `diferenciaGoles`, `grupo`) VALUES
 	(1, 'Club de Gimnasia y Esgrima La Plata A.F.A.', 9, 3, 3, 0, 0, 13, 0, 13, 1),
@@ -501,3 +512,5 @@ INSERT INTO `goleadores` (`nombre`, `apellido`, `numero`, `goles`, `id_equipo`) 
 -- actualizo el año y torneo de los equipos del paralelo 2018
 UPDATE goleadores SET anio = 2018;
 UPDATE goleadores SET torneo = 1 WHERE torneo IS NULL;
+
+
