@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
-import { Globals } from 'src/app/services/globals.service';
+import { GlobalsService } from 'src/app/services/globals.service';
 
 @Component({
   selector: 'app-usuario',
@@ -15,7 +15,7 @@ export class UsuarioComponent implements OnInit {
 
   usuario : Usuario;
 
-  constructor( private usuarioService : UsuarioService, private router : Router,private globals:Globals) { 
+  constructor( private usuarioService : UsuarioService, private router : Router,private globals:GlobalsService) { 
     this.usuario = new Usuario();
   }
 

@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
-export class Globals {
-  activo : Boolean = false;
-  
-}
+@Injectable({
+  providedIn: 'root'
+})
 
+
+export class GlobalsService {
+  activo : Boolean = false;
+
+  constructor() { }
+}
