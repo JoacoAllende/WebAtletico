@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'goleadores/actualizar', component: ActualizarGoleadoresComponent },
   { path: 'login', component: UsuarioComponent},
   { path: 'signup', component: FormSignUpComponent},
+  { path: 'logout', redirectTo: 'inicio'},
   { path: '**', redirectTo: 'inicio'}
 ];
 
