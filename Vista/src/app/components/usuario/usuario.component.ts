@@ -37,11 +37,24 @@ export class UsuarioComponent implements OnInit {
       },
       err => {
         console.log("dentro de err");
-        this.globals.activo=false;
+        //this.globals.activo=false;
         this.router.navigate(["/login"]);
         console.error(err);
       }
     )
   }
 
+  cerrarSesion(){
+    this.usuarioService.logout().subscribe(
+      res => {
+        console.log("dentro de res");
+        this.globals.activo=false;
+        console.log(res);
+      },
+      err => {
+        console.log("dentro de err");
+        console.log(err);
+      }
+    )
+  }
 }
