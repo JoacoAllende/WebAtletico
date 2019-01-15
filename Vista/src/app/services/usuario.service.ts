@@ -8,8 +8,7 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuarioService {
 
-  message: String;
-
+  
 
   API_URI = 'http://localhost:3000';
 
