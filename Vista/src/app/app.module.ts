@@ -14,6 +14,8 @@ import { GoleadoresComponent } from './components/goleadores/goleadores.componen
 import { CopaPlataComponent } from './components/copa-plata/copa-plata.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ActualizarGoleadoresComponent } from './components/actualizar-goleadores/actualizar-goleadores.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ActualizarGoleadoresComponent } from './components/actualizar-goleadore
     CopaPlataComponent,
     InicioComponent,
     ActualizarGoleadoresComponent,
+    UsuarioComponent,
+    FormSignUpComponent,
   ],
   imports: [
     BrowserModule,

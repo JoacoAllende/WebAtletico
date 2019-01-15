@@ -1,0 +1,23 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Usuario } from '../models/usuario';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FormSignUpService {
+
+  API_URI = 'http://localhost:3000';
+
+
+  constructor( private http : HttpClient) { }
+
+  getForm (){
+    return this.http.get(`${this.API_URI}/signup`);
+  }
+
+  enviarRegistro(usuario: Usuario){
+    return this.http.post(`${this.API_URI}/signup`,usuario);
+  }
+}
