@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GruposService } from './services/grupos.service';
+import { GlobalsService } from './services/globals.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { GruposService } from './services/grupos.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private gruposService : GruposService){}
+  constructor(private gruposService : GruposService,private globals:GlobalsService){}
 
 
   private getGrupos(to, a){
