@@ -7,14 +7,14 @@
         <th>Jugador</th>
         <th>Equipo</th>
         <th>Goles</th>
-        <th>Editar</th>
+        <th *ngIf="globals.activo">Editar</th>
       </thead>
       <tbody>
         <tr *ngFor="let goleador of goleadoresService.goleadores">
           <td>{{goleador.nombre}} {{goleador.apellido}}</td>
           <td>{{goleador.equipo}}</td>
           <td>{{goleador.goles}}</td>
-          <td><a (click)="editGoleador(goleador)">
+          <td *ngIf="globals.activo"><a (click)="editGoleador(goleador)">
             <i class="glyphicon-pencil"></i>
           </a></td>
         </tr>
@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<div class="container">
+<div *ngIf="globals.activo" class="container">
   <form role="form" #goleadorForm="ngForm">
     <input type="hidden" name="id" [(ngModel)]="goleadoresService.selectedGoleador.id" #id="ngModel" >
     <div class="form-group">

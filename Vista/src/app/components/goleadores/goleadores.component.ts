@@ -3,6 +3,7 @@ import { GoleadoresService } from '../../services/goleadores.service'
 import { Goleador } from 'src/app/models/goleador';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
+import { GlobalsService } from 'src/app/services/globals.service';
 
 @Component({
   selector: 'app-goleadores',
@@ -12,7 +13,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class GoleadoresComponent implements OnInit {
 
-  constructor(private goleadoresService : GoleadoresService, private rutaActiva: ActivatedRoute) { }
+  constructor(private goleadoresService : GoleadoresService, private rutaActiva: ActivatedRoute, private globals :GlobalsService) { }
 
   ngOnInit() {
     this.rutaActiva.params.subscribe(
