@@ -8,10 +8,11 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ActualizarGoleadoresComponent } from './components/actualizar-goleadores/actualizar-goleadores.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
+import { JugadoresComponent } from './components/jugadores/jugadores.component';
 
 const routes: Routes = [
   
-  { path: 'inicio', component: InicioComponent },
+  { path: 'inicio', component: JugadoresComponent },
   { path: 'grupos/:torneo/:año', component: GruposComponent },
   { path: 'copaOro/:torneo/:año', component: CopaOroComponent },
   { path: 'copaPlata/:torneo/:año', component: CopaPlataComponent },

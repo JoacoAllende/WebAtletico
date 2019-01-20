@@ -1,0 +1,89 @@
+.slider {
+	width: 70%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 2000%;
+	
+	animation: cambio 45s infinite alternate linear;
+}
+
+.slider li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider img {
+	width: 100%;
+}
+
+.slider li h1 {
+    text-align: center;
+    color: red;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	4% {margin-left: 0;}
+	
+	5% {margin-left: -100%;}
+	9% {margin-left: -100%;}
+	
+	10% {margin-left: -200%;}
+	14% {margin-left: -200%;}
+	
+	15% {margin-left: -300%;}
+    19% {margin-left: -300%;}
+
+    20% {margin-left: -400%;}
+    24% {margin-left: -400%;}
+
+    25% {margin-left: -500%;}
+	29% {margin-left: -500%;}
+	
+	30% {margin-left: -600%;}
+	34% {margin-left: -600%;}
+	
+	35% {margin-left: -700%;}
+	39% {margin-left: -700%;}
+	
+	40% {margin-left: -800%;}
+    44% {margin-left: -800%;}
+
+    45% {margin-left: -900%;}
+    49% {margin-left: -900%;}
+
+    50% {margin-left: -1000%;}
+	54% {margin-left: -1000%;}
+	
+	55% {margin-left: -1100%;}
+	59% {margin-left: -1100%;}
+	
+	60% {margin-left: -1200%;}
+	64% {margin-left: -1200%;}
+	
+	65% {margin-left: -1300%;}
+    69% {margin-left: -1300%;}
+
+    70% {margin-left: -1400%;}
+    74% {margin-left: -1400%;}
+
+    75% {margin-left: -1500%;}
+	79% {margin-left: -1500%;}
+	
+	80% {margin-left: -1600%;}
+	84% {margin-left: -1600%;}
+	
+	85% {margin-left: -1700%;}
+	89% {margin-left: -1700%;}
+	
+	90% {margin-left: -1800%;}
+    94% {margin-left: -1800%;}
+
+    95% {margin-left: -1900%;}
+    100% {margin-left: -1900%;}
+}

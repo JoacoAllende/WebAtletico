@@ -16,6 +16,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ActualizarGoleadoresComponent } from './components/actualizar-goleadores/actualizar-goleadores.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
+import { JugadoresComponent } from './components/jugadores/jugadores.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.comp
     ActualizarGoleadoresComponent,
     UsuarioComponent,
     FormSignUpComponent,
+    JugadoresComponent,
   ],
   imports: [
     BrowserModule,
