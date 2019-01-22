@@ -12,12 +12,12 @@ import { JugadoresComponent } from './components/jugadores/jugadores.component';
 
 const routes: Routes = [
   
-  { path: 'inicio', component: JugadoresComponent },
+  { path: 'inicio', component: InicioComponent },
   { path: 'grupos/:torneo/:año', component: GruposComponent },
   { path: 'copaOro/:torneo/:año', component: CopaOroComponent },
   { path: 'copaPlata/:torneo/:año', component: CopaPlataComponent },
   { path: 'goleadores/:torneo/:año', component: GoleadoresComponent },
-  { path: 'goleadores/actualizar', component: ActualizarGoleadoresComponent },
+  { path: 'jugadores', component: JugadoresComponent },
   { path: 'login', component: UsuarioComponent},
   { path: 'signup', component: FormSignUpComponent},
   { path: 'logout', redirectTo: 'inicio'},
