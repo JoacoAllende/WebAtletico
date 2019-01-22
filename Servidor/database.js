@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-
+/*
 const {promisify} = require("util");
 
 const { database } = require('./keys');
@@ -29,8 +29,8 @@ mysqlConnection.getConnection((err, connection) => {
   
     return;
   });
+*/
 
-/*
 const mysqlConnection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -45,8 +45,8 @@ mysqlConnection.connect(function(err){
     } else {
         console.log('db is connected');
     }
-}); */
+}); 
 
-mysqlConnection.query =  promisify(mysqlConnection.query);
+//mysqlConnection.query =  promisify(mysqlConnection.query);
 
 module.exports = mysqlConnection;
