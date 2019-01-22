@@ -1,5 +1,5 @@
 <nav class="nav navbar navbar-default navbar-fixed-top">
-    <div *ngIf="!globals.activo" class="container">
+    <div class="container">
             <div class="container">
                     <img class="col-sm-1" src="../assets/imagenes/club-atletico-ayacucho.png">
                     <div class="col-sm-5"></div>
@@ -23,7 +23,7 @@
                         <li><a [routerLink]="['/goleadores','1','2019']">Goleadores</a></li>
                     </ul>
                 </li>
-                <li><a href="">Torneo Pasados</a>
+                <li><a>Torneo Pasados</a>
                     <ul>
                             <li><a>Torneo Nacional 2018</a>
                                 <ul>
@@ -50,63 +50,6 @@
         </div>
 </nav>
 
-<nav *ngIf="globals.activo" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <img class="col-sm-1" src="../assets/imagenes/club-atletico-ayacucho.png">
-        <div class="col-sm-5"></div>
-        <h1 class="col-sm-6">Club Atlético Ayacucho</h1>
-    </div>
-    <div class="container">
-        <div class="btn-group">
-            <button type="button" class="btn btn-default"><a [routerLink]="['inicio']" style="color: black">Inicio</a></button>
-        </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                Torneo Nacional <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a [routerLink]="['/grupos','0','2018']">Fase de grupos</a></li>
-                <li><a [routerLink]="['/copaOro','0','2018']">Copa de oro</a></li>
-                <li><a [routerLink]="['/copaPlata','0','2018']">Copa de plata</a></li>
-                <li><a [routerLink]="['/goleadores','0','2018']">Goleadores</a></li>
-            </ul>
-        </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                Torneo Paralelo <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-                    <li><a [routerLink]="['/grupos','1','2018']">Fase de grupos</a></li>
-                    <li><a [routerLink]="['/copaOro','1','2018']">Copa de oro</a></li>
-                    <li><a [routerLink]="['/copaPlata','1','2018']">Copa de plata</a></li>
-                    <li><a [routerLink]="['/goleadores','1','2018']">Goleadores</a></li>
-            </ul>
-        </div>
-        <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    Torneos pasados <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            Torneos nacional 2018 <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-submenu">
-                            <li><a [routerLink]="['/grupos','0','2018']">Fase de grupos</a></li>
-                            <li><a [routerLink]="['/copaOro','0','2018']">Copa de oro</a></li>
-                            <li><a [routerLink]="['/copaPlata','0','2018']">Copa de plata</a></li>
-                            <li><a [routerLink]="['/goleadores','0','2018']">Goleadores</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Torneo paralelo 2018</a></li>
-                </ul>
-            </div>
-            <div class="btn-group">
-                    <button type="button" class="btn btn-default">Historia</button>
-            </div>
-        
-    </div>
-</nav>
 <div class="container">
     <h1>Torneo Internacional de Fútbol Infantil</h1>
     <h2>Copa Ciudad de Ayacucho</h2>

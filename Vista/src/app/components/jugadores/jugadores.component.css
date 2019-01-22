@@ -87,3 +87,10 @@
     95% {margin-left: -1900%;}
     100% {margin-left: -1900%;}
 }
+
+p {
+	padding-top: 10px;
+	text-align: center;
+	color: white;
+	font-size: 24px;
+}

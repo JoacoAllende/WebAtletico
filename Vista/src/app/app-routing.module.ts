@@ -8,6 +8,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
 import { JugadoresComponent } from './components/jugadores/jugadores.component';
+import { HistoriaComponent } from './components/historia/historia.component';
 
 const routes: Routes = [
   
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'copaPlata/:torneo/:año', component: CopaPlataComponent },
   { path: 'goleadores/:torneo/:año', component: GoleadoresComponent },
   { path: 'jugadores', component: JugadoresComponent },
+  { path: 'historia', component: HistoriaComponent },
   { path: 'login', component: UsuarioComponent},
   { path: 'signup', component: FormSignUpComponent},
   { path: 'logout', redirectTo: 'inicio'},

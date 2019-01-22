@@ -16,6 +16,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
 import { JugadoresComponent } from './components/jugadores/jugadores.component';
+import { HistoriaComponent } from './components/historia/historia.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { JugadoresComponent } from './components/jugadores/jugadores.component';
     UsuarioComponent,
     FormSignUpComponent,
     JugadoresComponent,
+    HistoriaComponent,
   ],
   imports: [
     BrowserModule,
