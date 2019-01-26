@@ -14,6 +14,6 @@ export class CopaPlataService {
    }
 
    getInstancias(to, a){
-    return this.http.get(`http://localhost:3000/copaPlata/${to}/${a}`);
+    return this.http.get(`http://clubatleticoayacucho.com:3002/copaPlata/${to}/${a}`);
    }
 }

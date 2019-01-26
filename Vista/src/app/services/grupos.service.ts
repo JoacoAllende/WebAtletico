@@ -14,6 +14,6 @@ export class GruposService {
    }
 
   getGrupos(to, a) {
-    return this.http.get(`http://localhost:3000/grupos/${to}/${a}`);
+    return this.http.get(`http://clubatleticoayacucho.com:3002/grupos/${to}/${a}`);
   }
 }

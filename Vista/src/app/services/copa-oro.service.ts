@@ -14,6 +14,6 @@ export class CopaOroService {
    }
 
   getInstancias(to, a){
-    return this.http.get(`http://localhost:3000/copaOro/${to}/${a}`);
+    return this.http.get(`http://clubatleticoayacucho.com:3002/copaOro/${to}/${a}`);
   }
 }

@@ -6,6 +6,7 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const validator = require("express-validator");
 const MySQLStore = require('express-mysql-session')(session);
+const path = require('path');
 
 //const mySqlConnection = require('./database');
 const { database } = require('./keys');
@@ -16,8 +17,13 @@ require("./lib/passport");
 //Settings
 
 app.set('port', process.env.PORT || 3000);
+app.use(express.static(__dirname + '/../Vista/dist/Vista'));
+app.get('/*',function (req, res) {
+    res.sendFile(path.join(__dirname + '/../Vista/dist/Vista/index.html'))
+})
 
 //Middlewares
+
 app.use(session({
     secret: "atleticomysqlsession",
     resave: false,
