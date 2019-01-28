@@ -16,14 +16,14 @@ export class GoleadoresService {
    }
 
    postGoleador(to, a, goleador: Goleador){
-    return this.http.post(`http://clubatleticoayacucho.com:3002/goleadores/${to}/${a}`,goleador);
+    return this.http.post(`http://clubatleticoayacucho.com:4000/goleadores/${to}/${a}`,goleador);
    }
 
    putGoleador(to, a, goleador: Goleador){
-    return this.http.put(`http://clubatleticoayacucho.com:3002/goleadores/${to}/${a}`,goleador);
+    return this.http.put(`http://clubatleticoayacucho.com:4000/goleadores/${to}/${a}`,goleador);
    }
 
    getGoleadores(to, a){
-    return this.http.get(`http://clubatleticoayacucho.com:3002/goleadores/${to}/${a}`);
+    return this.http.get(`http://clubatleticoayacucho.com:4000/goleadores/${to}/${a}`);
    }
 }
