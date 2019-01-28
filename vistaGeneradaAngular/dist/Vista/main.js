@@ -995,7 +995,7 @@ var CopaOroService = /** @class */ (function () {
         this.instancias = [];
     }
     CopaOroService.prototype.getInstancias = function (to, a) {
-        return this.http.get("http://clubatleticoayacucho.com:4000/copaOro/" + to + "/" + a);
+        return this.http.get("http://31.220.54.132:4000/copaOro/" + to + "/" + a);
     };
     CopaOroService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -1032,7 +1032,7 @@ var CopaPlataService = /** @class */ (function () {
         this.instancias = [];
     }
     CopaPlataService.prototype.getInstancias = function (to, a) {
-        return this.http.get("http://clubatleticoayacucho.com:4000/copaPlata/" + to + "/" + a);
+        return this.http.get("http://31.220.54.132:4000/copaPlata/" + to + "/" + a);
     };
     CopaPlataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -1143,13 +1143,13 @@ var GoleadoresService = /** @class */ (function () {
         this.selectedGoleador = new _models_goleador__WEBPACK_IMPORTED_MODULE_3__["Goleador"];
     }
     GoleadoresService.prototype.postGoleador = function (to, a, goleador) {
-        return this.http.post("http://clubatleticoayacucho.com:4000/goleadores/" + to + "/" + a, goleador);
+        return this.http.post("http://31.220.54.132:4000/goleadores/" + to + "/" + a, goleador);
     };
     GoleadoresService.prototype.putGoleador = function (to, a, goleador) {
-        return this.http.put("http://clubatleticoayacucho.com:4000/goleadores/" + to + "/" + a, goleador);
+        return this.http.put("http://31.220.54.132:4000/goleadores/" + to + "/" + a, goleador);
     };
     GoleadoresService.prototype.getGoleadores = function (to, a) {
-        return this.http.get("http://clubatleticoayacucho.com:4000/goleadores/" + to + "/" + a);
+        return this.http.get("http://31.220.54.132:4000/goleadores/" + to + "/" + a);
     };
     GoleadoresService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -1186,7 +1186,7 @@ var GruposService = /** @class */ (function () {
         this.grupos = [];
     }
     GruposService.prototype.getGrupos = function (to, a) {
-        return this.http.get("http://clubatleticoayacucho.com:4000/grupos/" + to + "/" + a);
+        return this.http.get("http://31.220.54.132:4000/grupos/" + to + "/" + a);
     };
     GruposService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
