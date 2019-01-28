@@ -16,9 +16,9 @@ require("./lib/passport");
 
 //Settings
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 app.use(express.static(__dirname + '/../Vista/dist/Vista'));
-app.get('/*',function (req, res) {
+app.get('/',function (req, res) {
     res.sendFile(path.join(__dirname + '/../Vista/dist/Vista/index.html'))
 })
 

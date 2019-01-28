@@ -1,4 +1,23 @@
 const mysql = require('mysql');
+
+const mysqlConnection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'basededatospruebatorneo'
+});
+
+mysqlConnection.connect(function(err){
+    if (err){
+        console.log(err);
+        return;
+    } else {
+        console.log('db is connected');
+    }
+}); 
+
+module.exports = mysqlConnection;
+
 /*
 const {promisify} = require("util");
 
@@ -31,22 +50,4 @@ mysqlConnection.getConnection((err, connection) => {
   });
 */
 
-const mysqlConnection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'basededatospruebatorneo'
-});
-
-mysqlConnection.connect(function(err){
-    if (err){
-        console.log(err);
-        return;
-    } else {
-        console.log('db is connected');
-    }
-}); 
-
 //mysqlConnection.query =  promisify(mysqlConnection.query);
-
-module.exports = mysqlConnection;
