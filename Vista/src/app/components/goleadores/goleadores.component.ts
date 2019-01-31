@@ -13,7 +13,7 @@ import { GlobalsService } from 'src/app/services/globals.service';
 })
 export class GoleadoresComponent implements OnInit {
 
-  constructor(private goleadoresService : GoleadoresService, private rutaActiva: ActivatedRoute, private globals :GlobalsService) { }
+  constructor(public goleadoresService : GoleadoresService, private rutaActiva: ActivatedRoute, public globals :GlobalsService) { }
 
   ngOnInit() {
     this.rutaActiva.params.subscribe(

@@ -10,7 +10,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class CopaPlataComponent implements OnInit {
 
-  constructor(private copaPlataService : CopaPlataService, private rutaActiva : ActivatedRoute) { }
+  constructor(public copaPlataService : CopaPlataService, private rutaActiva : ActivatedRoute) { }
 
   ngOnInit() {
     this.rutaActiva.params.subscribe(

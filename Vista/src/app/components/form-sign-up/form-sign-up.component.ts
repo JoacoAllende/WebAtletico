@@ -17,7 +17,7 @@ export class FormSignUpComponent implements OnInit {
 
   usuario: Usuario;
 
-  constructor(private formSignUpService: FormSignUpService, private router: Router) {
+  constructor(public formSignUpService: FormSignUpService, private router: Router) {
     this.usuario = new Usuario();
   }
 

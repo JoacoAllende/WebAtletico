@@ -11,7 +11,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class CopaOroComponent implements OnInit {
 
-  constructor(private copaOroService : CopaOroService, private rutaActiva : ActivatedRoute) { }
+  constructor(public copaOroService : CopaOroService, private rutaActiva : ActivatedRoute) { }
 
   ngOnInit() {
     this.rutaActiva.params.subscribe(

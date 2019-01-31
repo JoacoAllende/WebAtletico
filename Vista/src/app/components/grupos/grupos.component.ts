@@ -11,7 +11,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class GruposComponent implements OnInit {
 
-  constructor(private gruposService : GruposService, private rutaActiva : ActivatedRoute) { }
+  constructor(public gruposService : GruposService, private rutaActiva : ActivatedRoute) { }
 
   ngOnInit() {
     this.rutaActiva.params.subscribe(
