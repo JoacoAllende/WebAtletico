@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { GlobalsService } from '../services/globals.service';
 import { Usuario } from '../models/usuario';
 
 @Injectable({
@@ -10,10 +10,10 @@ export class UsuarioService {
 
   
 
-  API_URI = 'http://localhost:3000';
+  API_URI;
 
-  constructor( private http : HttpClient) {
-    
+  constructor( private http : HttpClient, private globalsService : GlobalsService) {
+    this.API_URI = globalsService.API_URI;
    }
 
 
