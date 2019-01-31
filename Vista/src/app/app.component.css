@@ -11,10 +11,6 @@ h1, h2 {
     font-family:  monospace,'Courier New', Courier; 
 }
 
-h1 {
-    font-size: 44px;
-}
-
 nav h1 {
     text-align: right;
 }
