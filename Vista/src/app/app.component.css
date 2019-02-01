@@ -1,14 +1,24 @@
 nav{
-    background: #1F1C2C;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #928DAB, #1F1C2C);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #928DAB, #1F1C2C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: rgb(237,7,46);
+    background: radial-gradient(circle, rgba(237,7,46,0.8435574913559174) 0%, rgba(145,1,28,1) 100%, rgba(94,173,189,1) 100%); 
 }
 
-h1, h2 {
+h1 {
     color: white;
     text-align: center;
     font-weight: bold;
     font-family:  monospace,'Courier New', Courier; 
+}
+
+h2, h3 {
+    color: rgb(99, 99, 156);
+    text-align: center;
+    font-weight: bold;
+    font-family:  monospace,'Courier New', Courier; 
+}
+
+h3 {
+    font-size: 28px;
 }
 
 nav h1 {
