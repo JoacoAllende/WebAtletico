@@ -56,6 +56,7 @@ app.use(require('./routes/copaOro.routes'));
 app.use(require('./routes/goleadores.routes'));
 app.use(require('./routes/copaPlata.routes'));
 app.use(require('./routes/autenticacion.routes'));
+app.use(require('./routes/torneosPasados.routes'));
 
 
 //Starting the Server
