@@ -20,7 +20,7 @@ torneosPasadosController.getTorneosPasados = (req, res, next) => {
                     }
                 })
                 let equipos = [];
-                const query2 = 'SELECT * FROM equipoParticipaTorneo WHERE id_torneo = ' + i;
+                const query2 = 'SELECT equipo FROM equipoParticipaTorneo WHERE id_torneo = ' + i;
                 mysqlConnection.query(query2, (err, rows, fields) => {
                     if (!err) {
                         let resultArray = Object.values(JSON.parse(JSON.stringify(rows)));

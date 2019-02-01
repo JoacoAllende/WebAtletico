@@ -9,6 +9,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
 import { JugadoresComponent } from './components/jugadores/jugadores.component';
 import { HistoriaComponent } from './components/historia/historia.component';
+import { TorneosPasadosComponent } from './components/torneos-pasados/torneos-pasados.component';
 
 const routes: Routes = [
   
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'goleadores/:torneo/:año', component: GoleadoresComponent },
   { path: 'jugadores', component: JugadoresComponent },
   { path: 'historia', component: HistoriaComponent },
+  { path: 'torneosPasados', component: TorneosPasadosComponent },
   { path: 'login', component: UsuarioComponent},
   { path: 'signup', component: FormSignUpComponent},
   { path: 'logout', redirectTo: 'inicio'},

@@ -1,0 +1,41 @@
+<div class="container centraoo">
+    <h1 class="text-center">TORNEOS PASADOS</h1>
+    <div class="espacio"></div>
+    <div *ngFor="let torneo of torneosPasadosService.torneos">
+        <h3>{{ torneo[0][0].descripcion }}</h3>
+        <h4>Participaron del torneo {{torneo[0][0].cantEquipos}} equipos</h4>
+        <table class="table table-bordered table-striped">
+                <thead class="text-center">
+                  <th>1°</th>
+                  <th>2°</th>
+                  <th>3°</th>
+                  <th>4°</th>
+                  <th>Goleador</th>
+                  <th>Goles</th>
+                </thead>
+                <tbody>
+                  <tr >
+                      <td>{{torneo[0][0].primero}}</td>
+                      <td>{{torneo[0][0].segundo}}</td>
+                      <td>{{torneo[0][0].tercero}}</td>
+                      <td>{{torneo[0][0].cuarto}}</td>
+                      <td>{{torneo[0][0].goleador}}</td>
+                      <td>{{torneo[0][0].cantGoles}}</td>
+                  </tr>
+                </tbody>
+            </table>
+        <div class="espacio"></div>
+        <h4>Participaron los siguientes equipos destacados</h4>
+        <table class="table table-bordered table-striped">
+                <thead class="text-center">
+                  <th>Equipo</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let equipo of torneo[1]">
+                      <td>{{equipo.equipo}}</td>
+                  </tr>
+                </tbody>
+            </table>
+        <div class="espacio"></div>
+    </div>
+</div>

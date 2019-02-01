@@ -16,6 +16,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.component';
 import { JugadoresComponent } from './components/jugadores/jugadores.component';
 import { HistoriaComponent } from './components/historia/historia.component';
+import { TorneosPasadosComponent } from './components/torneos-pasados/torneos-pasados.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HistoriaComponent } from './components/historia/historia.component';
     FormSignUpComponent,
     JugadoresComponent,
     HistoriaComponent,
+    TorneosPasadosComponent,
   ],
   imports: [
     BrowserModule,
