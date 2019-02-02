@@ -83,26 +83,26 @@ CREATE TABLE IF NOT EXISTS equipoParticipaTorneo (
 
 -- ingreso los datos de los torneos pasados
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto, goleador) VALUES 
-('1° Torneo Nacional 14 al 16 de febrero de 1997 - Categoría 1984', 16, 'Club Atlético Boca Juniors', 'Club Azul Athletic', 'Club Estudiantes de La Plata', 'Ferrocarril Roca de Las Flores', 'Matías Alustiza -- Club Azul Athletic --'),
-('2º Torneo Nacional 6 al 8 de febrero de 1998 - Categoría 1985', 16, 'Racing Club de Avellaneda', 'Club Atlético Boca Juniors', 'Club Atlético Lanús', 'Club Atlético Independiente de Avellaneda', 'Luis Benítez -- Racing Club de Avellaneda --');
+('1° Torneo Nacional 14 al 16 de febrero de 1997 - Categoría 1984', 16, 'Club Atlético Boca Juniors', 'Club Azul Athletic', 'Club Estudiantes de La Plata', 'Ferrocarril Roca de Las Flores', 'Matías Alustiza (Club Azul Athletic)'),
+('2º Torneo Nacional 6 al 8 de febrero de 1998 - Categoría 1985', 16, 'Racing Club de Avellaneda', 'Club Atlético Boca Juniors', 'Club Atlético Lanús', 'Club Atlético Independiente de Avellaneda', 'Luis Benítez (Racing Club de Avellaneda)');
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto, goleador, cantGoles) VALUES 
 ('3º Torneo Nacional 5 al 7 de febrero de 1999 - Categoría 1986', 20, 'Club Atlético Boca Juniors', 'Club Atlético Independiente de Avellaneda', 'Club Atlético Lanús', 'Racing Club de Avellaneda', 'Damián Nápoli (Club Atlético Boca Juniors)', 8);
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto) VALUES 
 ('4º Torneo Nacional 4 al 6 de febrero de 2000 - Categoría 1987', 24, 'Club Atlético Boca Juniors', 'Club Atlético Independiente de Avellaneda', 'Racing Club de Avellaneda', 'Club Atlético Ayacucho');
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto, goleador, cantGoles) VALUES 
-('5º Torneo Nacional 9 al 11 de febrero de 2001 - Categoría 1988', 20, 'Club Atlético Independiente de Avellaneda', 'Club Atlético River Plate de Montevideo', 'Club Atlético Boca Juniors', 'Racing Club de Avellaneda', 'Sebastián Ahumada -- Racing Club de Avellaneda --', 11),
-('6º Torneo Nacional 7 al 10 de febrero de 2002 - Categoría 1989', 21, 'Club Atlético Vélez Sarsfield', 'Club Atlético Boca Juniors', 'Racing Club de Avellaneda', 'Club Atlético Independiente de Avellaneda', 'Jonatan Cristaldo -- Club Atlético Vélez Sarsfield --', 11), 
-('7º Torneo Nacional 6 al 9 de febrero de 2003 - Categoría 1990', 20, 'Club Atlético Boca Juniors', 'Club Atlético Independiente de Avellaneda', 'Club Atlético Vélez Sarsfield', 'Club Deportivo Castelli', 'Brian Nievas -- Club Atlético Independiente de Avellaneda --', 11),
-('8º Torneo Nacional 5 al 8 de febrero de 2004 - Categoría 1991', 20, 'Club Atlético Boca Juniors', 'Club Atlético Almagro Florida -Mar del Plata-', 'Club Atlético Vélez Sarsfield', 'Racing Club de Avellaneda', 'Nicolás Toledo -- Ferrocarril Roca de Las Flores --', 10),
-('9º Torneo Nacional 6 al 8 de febrero de 2005 - Categoría 1992', 20, 'Club Atlético Boca Juniors', 'Racing Club de Avellaneda', 'Club Atlético Vélez Sarsfield', 'Club Atlético Independiente de Avellaneda', 'Ignacio Patero -- Club Atlético Vélez Sarsfield --', 8),
-('10º Torneo Nacional 7 al 9 de febrero de 2006 - Categoría 1993', 20, 'Club Atlético Vélez Sarsfield', 'Club Atlético Independiente de Mar del Plata', 'Racing Club de Avellaneda', 'Club Atlético Banfield', 'Federico Caloni -- Club Atlético Vélez Sarsfield --', 7);
+('5º Torneo Nacional 9 al 11 de febrero de 2001 - Categoría 1988', 20, 'Club Atlético Independiente de Avellaneda', 'Club Atlético River Plate de Montevideo', 'Club Atlético Boca Juniors', 'Racing Club de Avellaneda', 'Sebastián Ahumada (Racing Club de Avellaneda)', 11),
+('6º Torneo Nacional 7 al 10 de febrero de 2002 - Categoría 1989', 21, 'Club Atlético Vélez Sarsfield', 'Club Atlético Boca Juniors', 'Racing Club de Avellaneda', 'Club Atlético Independiente de Avellaneda', 'Jonatan Cristaldo (Club Atlético Vélez Sarsfield)', 11), 
+('7º Torneo Nacional 6 al 9 de febrero de 2003 - Categoría 1990', 20, 'Club Atlético Boca Juniors', 'Club Atlético Independiente de Avellaneda', 'Club Atlético Vélez Sarsfield', 'Club Deportivo Castelli', 'Brian Nievas (Club Atlético Independiente de Avellaneda)', 11),
+('8º Torneo Nacional 5 al 8 de febrero de 2004 - Categoría 1991', 20, 'Club Atlético Boca Juniors', 'Club Atlético Almagro Florida (Mar del Plata)', 'Club Atlético Vélez Sarsfield', 'Racing Club de Avellaneda', 'Nicolás Toledo (Ferrocarril Roca de Las Flores)', 10),
+('9º Torneo Nacional 6 al 8 de febrero de 2005 - Categoría 1992', 20, 'Club Atlético Boca Juniors', 'Racing Club de Avellaneda', 'Club Atlético Vélez Sarsfield', 'Club Atlético Independiente de Avellaneda', 'Ignacio Patero (Club Atlético Vélez Sarsfield)', 8),
+('10º Torneo Nacional 7 al 9 de febrero de 2006 - Categoría 1993', 20, 'Club Atlético Vélez Sarsfield', 'Club Atlético Independiente de Mar del Plata', 'Racing Club de Avellaneda', 'Club Atlético Banfield', 'Federico Caloni (Club Atlético Vélez Sarsfield)', 7);
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto) VALUES 
 ('11º Torneo Nacional 8 al 10 de febrero de 2007 - Categoría 1994', 20, 'Club Atlético Boca Juniors', 'Club Atlético Vélez Sarsfield', 'Club Atlético Banfield', 'Club Atlético Liniers de Bahía Blanca'),
-('12º Torneo Nacional 6 al 9 de febrero de 2008 - Categoría 1995', 16, 'Club Atlético Banfield', 'E.F.I.G.A. -Las Flores-', 'Club Cadetes de San Martín', 'Club Atlético Ayacucho');
+('12º Torneo Nacional 6 al 9 de febrero de 2008 - Categoría 1995', 16, 'Club Atlético Banfield', 'E.F.I.G.A. (Las Flores)', 'Club Cadetes de San Martín', 'Club Atlético Ayacucho');
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto, goleador, cantGoles) VALUES 
-('13º Torneo Nacional 5 al 7 de febrero de 2016 - Categoría 2003', 20, 'Racing Club de Avellaneda', 'Club Atlético Lanús', 'Club Estudiantes de La Plata', 'Club Atlético Banfield', 'Evian Daniel Crescitelli -- Club Estudiantes de La Plata', 8),
-('14º Torneo Nacional 9 al 12 de febrero de 2017 - Categoría 2004', 24, 'Club Atlético Vélez Sarsfield', 'Club Estudiantes de La Plata', 'Club Atlético San Lorenzo de Almagro', 'Club Atlético Banfield', 'Santiago Castro -- Club Atlético Vélez Sarsfield --', 12),
-('15º Torneo Nacional 1 al 4 de febrero de 2018 - Categoría 2005', 28, 'Racing Club de Avellaneda', 'Club Atlético Boca Juniors', 'Club Atlético Vélez Sarsfield', 'Club de Gimnasia y Esgrima La Plata', 'Raúl Ignacio Cabral -- Club Atlético Vélez Sarsfield --', 15);
+('13º Torneo Nacional 5 al 7 de febrero de 2016 - Categoría 2003', 20, 'Racing Club de Avellaneda', 'Club Atlético Lanús', 'Club Estudiantes de La Plata', 'Club Atlético Banfield', 'Evian Daniel Crescitelli (Club Estudiantes de La Plata)', 8),
+('14º Torneo Nacional 9 al 12 de febrero de 2017 - Categoría 2004', 24, 'Club Atlético Vélez Sarsfield', 'Club Estudiantes de La Plata', 'Club Atlético San Lorenzo de Almagro', 'Club Atlético Banfield', 'Santiago Castro (Club Atlético Vélez Sarsfield)', 12),
+('15º Torneo Nacional 1 al 4 de febrero de 2018 - Categoría 2005', 28, 'Racing Club de Avellaneda', 'Club Atlético Boca Juniors', 'Club Atlético Vélez Sarsfield', 'Club de Gimnasia y Esgrima La Plata', 'Raúl Ignacio Cabral (Club Atlético Vélez Sarsfield)', 15);
 
 -- ingreso los equipos de afa participantes de cada torneo
 INSERT INTO equipoParticipaTorneo (id_torneo, equipo) VALUES
@@ -124,7 +124,7 @@ INSERT INTO equipoParticipaTorneo (id_torneo, equipo) VALUES
 (5, 'Club Atlético Boca Juniors'),
 (5, 'Racing Club de Avellaneda'),
 (5, 'Club Atlético Independiente de Avellaneda'),
-(5, 'Club Atlético River Plate de Montevideo -Uruguay-'),
+(5, 'Club Atlético River Plate de Montevideo (Uruguay)'),
 (6, 'Club Atlético Boca Juniors'),
 (6, 'Racing Club de Avellaneda'),
 (6, 'Club Atlético Vélez Sarsfield'),
