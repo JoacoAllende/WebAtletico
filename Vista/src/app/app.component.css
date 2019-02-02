@@ -68,7 +68,9 @@ ul, ol {
 }
 
 .nav li ul li ul {
-    right:100%;
+    left:100%;
     top:0px;
+    padding: 50px 0px;
+    
 }
 
