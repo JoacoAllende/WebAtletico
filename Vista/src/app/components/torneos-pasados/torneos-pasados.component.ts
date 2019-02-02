@@ -12,7 +12,7 @@ import { Torneo } from 'src/app/models/torneo';
 })
 export class TorneosPasadosComponent implements OnInit {
 
-  constructor(private torneosPasadosService : TorneosPasadosService, private rutaActiva : ActivatedRoute, public globals : GlobalsService) { }
+  constructor(public torneosPasadosService : TorneosPasadosService, private rutaActiva : ActivatedRoute, public globals : GlobalsService) { }
 
   ngOnInit() {
     this.getTorneosPasados();
