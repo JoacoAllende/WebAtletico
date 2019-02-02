@@ -16,10 +16,10 @@ export class FormSignUpService {
    }
 
   getForm (){
-    return this.http.get(`${this.API_URI}/signup`);
+    return this.http.get(`http://${this.API_URI}/signup`);
   }
 
   enviarRegistro(usuario: Usuario){
-    return this.http.post(`${this.API_URI}/signup`,usuario);
+    return this.http.post(`http://${this.API_URI}/signup`,usuario);
   }
 }

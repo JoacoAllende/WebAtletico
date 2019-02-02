@@ -19,16 +19,16 @@ export class UsuarioService {
 
   getUsuarios () {
     
-    return this.http.get(`${this.API_URI}/login`);
+    return this.http.get(`http://${this.API_URI}/login`);
   
   }
    
   iniciarSesion (usuario:Usuario) {
-    return this.http.post(`${this.API_URI}/login`, usuario);
+    return this.http.post(`http://${this.API_URI}/login`, usuario);
   }
 
   logout (){
-    return this.http.get(`${this.API_URI}/logout`);
+    return this.http.get(`http://${this.API_URI}/logout`);
   }
   
 }
