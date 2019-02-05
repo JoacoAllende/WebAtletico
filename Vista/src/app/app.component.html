@@ -1,10 +1,21 @@
 <nav class="nav navbar navbar-default navbar-fixed-top">
     <div class="container">
             <div class="container">
-                    <img class="col-sm-1" width="70px" height="70px" src="../assets/imagenes/club-atletico-ayacucho2.png ">
-                    <div class="col-sm-5"></div>
-                    <h1 class="col-sm-6">Club Atlético Ayacucho</h1>
-                </div>
+                <a [routerLink]="['inicio']">
+                    <img class="col-sm-1" width="70px" height="70px" src="../assets/imagenes/club-atletico-ayacucho2.png">
+                </a>
+                <a href="https://www.facebook.com/Torneo-Nacional-de-F%C3%BAtbol-Infantil-633176683801882/" target="_blank">
+                    <img class="col-sm-1" width="70px" height="70px" src="../assets/imagenes/logo-facebook.png">
+                </a>
+                <a href="https://www.youtube.com/channel/UCFjMuTrrAohkqH6rGUjRRmA/featured" target="_blank">
+                    <img class="col-sm-1" width="70px" height="70px" src="../assets/imagenes/logo-youtube.png">
+                </a>
+                <a target="_blank">
+                    <img class="col-sm-1" width="70px" height="70px" src="../assets/imagenes/logo-instagram.png">
+                </a>
+                <div class="col-sm-2"></div>
+                <h1 class="col-sm-6">Club Atlético Ayacucho</h1>
+            </div>
             <ul class="nav">
                 <li><a [routerLink]="['inicio']">Inicio</a></li>
                 <li><a>Torneo Nacional</a>
