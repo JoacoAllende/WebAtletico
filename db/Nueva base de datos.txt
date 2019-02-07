@@ -169,8 +169,6 @@ INSERT INTO equipoParticipaTorneo (id_torneo, equipo) VALUES
 (15, 'Club de Gimnasia y Esgrima La Plata'),
 (15, 'Club Nacional de Fútbol de Uruguay');
 
-
-
 -- ingreso equipos del torneon nacional 2018
 INSERT INTO `equipo` (`id`, `nombre`, `puntos`, `partidosJugados`, `partidosGanados`, `partidosEmpatados`, `partidosPerdidos`, `golesAFavor`, `golesEnContra`, `diferenciaGoles`, `grupo`) VALUES
 	(1, 'Club de Gimnasia y Esgrima La Plata A.F.A.', 9, 3, 3, 0, 0, 13, 0, 13, 1),
@@ -179,10 +177,10 @@ INSERT INTO `equipo` (`id`, `nombre`, `puntos`, `partidosJugados`, `partidosGana
 	(4, 'Club Social y Deportivo El Fortin ', 6, 3, 2, 0, 1, 5, 3, 2, 1),
 	(5, 'Club Atletico Velez Sarsfield A.F.A.', 9, 3, 3, 0, 0, 27, 2, 25, 2),
 	(6, 'Club Defensores (Ayacucho)', 6, 3, 2, 0, 1, 5, 12, -7, 2),
-	(7, 'Club Deportivo El Leon ', 1, 3, 0, 1, 2, 3, 7, -4, 2),
+	(7, 'Club Deportivo El Leon', 1, 3, 0, 1, 2, 3, 7, -4, 2),
 	(8, 'Club Embajadores de Olavarria', 1, 3, 0, 1, 2, 4, 18, -14, 2),
 	(9, 'Club Atletico Banfield A.F.A.', 9, 3, 3, 0, 0, 25, 0, 25, 3),
-	(10, 'Club de Gimnasia y Esgrima de Tandil ', 1, 3, 0, 1, 2, 1, 11, -10, 3),
+	(10, 'Club de Gimnasia y Esgrima de Tandil', 1, 3, 0, 1, 2, 1, 11, -10, 3),
 	(11, 'Club Sportivo Trabajo (Balcarce)', 4, 3, 1, 1, 1, 6, 11, -5, 3),
 	(12, ' C.A.F.A. (Moreno)', 2, 3, 0, 2, 1, 4, 14, -10, 3),
 	(13, 'Club Estudiantes de la Plata A.F.A', 9, 3, 3, 0, 0, 25, 0, 25, 4),
@@ -192,7 +190,7 @@ INSERT INTO `equipo` (`id`, `nombre`, `puntos`, `partidosJugados`, `partidosGana
 	(17, 'Racing Club de Avellaneda A.F.A.', 9, 3, 3, 0, 0, 14, 0, 14, 5),
 	(18, 'Club Atletico Ferrocarril Sud (Tandil)', 4, 3, 1, 1, 1, 4, 4, 0, 5),
 	(19, 'Club Deportivo Juventud Unida', 4, 3, 1, 1, 1, 2, 7, -5, 5),
-	(20, 'Club Atletico Chascomus ', 0, 3, 0, 0, 3, 0, 9, -9, 5),
+	(20, 'Club Atletico Chascomus', 0, 3, 0, 0, 3, 0, 9, -9, 5),
 	(21, 'Club Atletico Boca Juniors A.F.A.', 9, 3, 3, 0, 0, 21, 0, 21, 6),
 	(22, 'Club Independiente (Tandil)', 4, 3, 1, 1, 1, 2, 9, -7, 6),
 	(23, 'Club Atletico Alvarado (Mar del Plata)', 0, 3, 0, 0, 3, 2, 14, -12, 6),
@@ -623,4 +621,54 @@ INSERT INTO `goleadores` (`nombre`, `apellido`, `numero`, `goles`, `id_equipo`) 
 UPDATE goleadores SET anio = 2018;
 UPDATE goleadores SET torneo = 1 WHERE torneo IS NULL;
 
+-- ingreso los equipos del torneo nacional 2019
+INSERT INTO `equipo` (`nombre`, `grupo`, `anio`, `torneo`) VALUES
+('Club Atlético River Plate A.F.A.', 1, 2019, 0),
+('Club y Biblioteca Ramón Santamarina (Tandil)', 1, 2019, 0),
+('Club Atletico Estudiantes (Olavarria)', 1, 2019, 0),
+('Club Atletico Argentino (Saladillo)', 1, 2019, 0),
+('Club Estudiantes de La Plata A.F.A.', 2, 2019, 0),
+('Club Atlético y Social San Lorenzo (Rauch)', 2, 2019, 0),
+('Club Atlético Ayacucho', 2, 2019, 0),
+('Club Atlético Belgrano (Vidal)', 2, 2019, 0),
+('Club Nacional de Fútbol de Uruguay', 3, 2019, 0),
+('Club Atletico Ferrocarril Sud (Tandil)', 3, 2019, 0),
+('Club Atletico Quilmes (Mar del Plata)', 3, 2019, 0),
+('Asociación Deportiva Atlético Villa Gesell', 3, 2019, 0),
+('Club Atletico Banfield A.F.A.', 4, 2019, 0),
+('Club de Gimnasia y Esgrima de Tandil', 4, 2019, 0),
+('Club Deportivo Independencia (A. G. Chavez)', 4, 2019, 0),
+('Club Deportivo Juventud Unida (Gral. Madariaga)', 4, 2019, 0),
+('Club Atletico Boca Juniors A.F.A.', 5, 2019, 0),
+('Club Defensores (Ayacucho)', 5, 2019, 0),
+('Club Atletico Chascomus', 5, 2019, 0),
+('Club Social y Deportivo Unión (Maipu)', 5, 2019, 0),
+('Club Atletico San Lorenzo de Almagro A.F.A.', 6, 2019, 0),
+('Club Atletico Social y Deportivo Rauch', 6, 2019, 0),
+('Club Atlético Liniers (Bahía Blanca) B', 6, 2019, 0),
+('Club Deportivo El Leon', 6, 2019, 0),
+('Racing Club de Avellaneda A.F.A.', 7, 2019, 0),
+('Club Sarmiento (Ayacucho)', 7, 2019, 0),
+('Club Atletico Independiente (Mar del Plata)', 7, 2019, 0),
+('Club Atlético Maipu', 7, 2019, 0),
+('Club Atletico Velez Sarsfield A.F.A.', 8, 2019, 0),
+('Club Independiente (Tandil)', 8, 2019, 0),
+('Club Atlético Liniers (Bahía Blanca) A', 8, 2019, 0),
+('Club Ferrocarril Roca (Las Flores)', 8, 2019, 0);
 
+-- ingreso los equipos del torneo paralelo 2019
+INSERT INTO `equipo` (`nombre`, `grupo`, `anio`, `torneo`) VALUES
+('Club Atletico Estudiantes (Olavarria)', 1, 2019, 1),
+('Club Deportivo Juventud Unida (Gral. Madariaga)', 1, 2019, 1),
+('Club y Biblioteca Ramón Santamarina (Tandil)', 1, 2019, 1),
+('Club Atlético Liniers (Bahía Blanca) A', 1, 2019, 1),
+('Club Alumni Azuleño', 2, 2019, 1),
+('Club Sarmiento (Ayacucho)', 2, 2019, 1),
+('Club Independiente (Tandil)', 2, 2019, 1),
+('Club Atlético Liniers (Bahía Blanca) B', 2, 2019, 1),
+('Club Atletico Independiente (Mar del Plata)', 3, 2019, 1),
+('Club Defensores (Ayacucho)', 3, 2019, 1),
+('Club Atletico Ferrocarril Sud (Tandil)', 3, 2019, 1),
+('Club Atlético Ayacucho', 4, 2019, 1),
+('Club Atlético Maipu', 4, 2019, 1),
+('Club Ferrocarril Roca (Las Flores)', 4, 2019, 1);
