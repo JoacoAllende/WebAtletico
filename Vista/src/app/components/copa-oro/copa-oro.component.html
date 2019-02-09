@@ -16,10 +16,52 @@
                 <ng-template #penalesDos><div style="margin: 9%;">{{partido.penalesVisitante}}</div></ng-template>
                 <td *ngIf="partido.id_equipoUno != partido.id_equipoDos; else libre">{{partido.equipoDos}}</td>
                 <ng-template #libre><div style="margin-top: 1.5%; margin-bottom: 1.5%">LIBRE</div></ng-template>
+                <td *ngIf="!globals.activo"><a (click)="editForm(partido)">
+                  <i class="glyphicon-pencil"></i>
+                </a></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+</div>
+<div *ngIf="!globals.activo" class="container">
+  <form role="form" #PartidoForm="ngForm">
+    <input type="hidden" name="id_partido" [(ngModel)]="copaOroService.selectedPartido.id_partido" #id_partido="ngModel" >
+    <div class="form-group">
+      <label for="EquipoUno">Equipo Uno</label>
+      <input type="text" class="form-control" name="equipoUno" [(ngModel)]="copaOroService.selectedPartido.equipoUno" #equipoUno="ngModel" required
+      placeholder="Equipo Uno">
+    </div>
+    <div class="form-group">
+      <label for="GolesLocal">Goles Local</label>
+      <input type="number" class="form-control" name="golesLocal" [(ngModel)]="copaOroService.selectedPartido.golesLocal" #golesLocal="ngModel" required
+             placeholder="Goles Local">
+    </div> 
+    <div class="form-group">
+      <label for="PenalesLocal">Penales Local</label>
+      <input type="number" class="form-control" name="penalesLocal" [(ngModel)]="copaOroService.selectedPartido.penalesLocal" #penalesLocal="ngModel" required
+             placeholder="Penales Local">
+    </div>
+    <div class="form-group">
+      <label for="equipoDos">Equipo Dos</label>
+      <input type="text" class="form-control" name="equipoDos" [(ngModel)]="copaOroService.selectedPartido.equipoDos" #equipoDos="ngModel" required
+      placeholder="Equipo Dos">
+    </div>
+    <div class="form-group">
+      <label for="GolesVisitante">Goles Visitante</label>
+      <input type="number" class="form-control" name="golesVisitante" [(ngModel)]="copaOroService.selectedPartido.golesVisitante" #golesVisitante="ngModel" required
+             placeholder="Goles Visitante">
+    </div> 
+    <div class="form-group">
+      <label for="PenalesVisitante">Penales Visitante</label>
+      <input type="number" class="form-control" name="penalesVisitante" [(ngModel)]="copaOroService.selectedPartido.penalesVisitante" #penalesVisitante="ngModel" required
+             placeholder="Penales Visitante">
+    </div>
+    <input type="hidden" name="anio" [(ngModel)]="copaOroService.selectedPartido.anio" #anio="ngModel" >
+    <input type="hidden" name="torneo" [(ngModel)]="copaOroService.selectedPartido.torneo" #torneo="ngModel" >
+    <button type="submit" class="btn btn-default" (click)="editPartido(PartidoForm.value.torneo,PartidoForm.value.anio,PartidoForm)">Enviar</button>
+    <button type="submit" class="btn btn-default" (click)="resetForm(PartidoForm)">Limpiar</button>
+  </form>
 </div>
