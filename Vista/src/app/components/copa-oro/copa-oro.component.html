@@ -16,7 +16,7 @@
                 <ng-template #penalesDos><div style="margin: 9%;">{{partido.penalesVisitante}}</div></ng-template>
                 <td *ngIf="partido.id_equipoUno != partido.id_equipoDos; else libre">{{partido.equipoDos}}</td>
                 <ng-template #libre><div style="margin-top: 1.5%; margin-bottom: 1.5%">LIBRE</div></ng-template>
-                <td *ngIf="!globals.activo"><a (click)="editForm(partido)">
+                <td *ngIf="globals.activo"><a (click)="editForm(partido)">
                   <i class="glyphicon-pencil"></i>
                 </a></td>
             </tr>
@@ -26,7 +26,7 @@
     </div>
   </div>
 </div>
-<div *ngIf="!globals.activo" class="container">
+<div *ngIf="globals.activo" class="container">
   <form role="form" #PartidoForm="ngForm">
     <input type="hidden" name="id_partido" [(ngModel)]="copaOroService.selectedPartido.id_partido" #id_partido="ngModel" >
     <div class="form-group">
