@@ -65,8 +65,7 @@ copaPlataController.getPartido = (req, res, next) => {
 
 copaPlataController.editPartido = (req, res, next) => {
     const partido = req.body;
-    const query = 'UPDATE juega SET golesLocal = ' + partido.golesLocal + ', golesVisitante = ' + partido.golesVisitante + ', penalesLocal = ' + partido.penalesLocal + ', penalesVisitante = ' + partido.penalesVisitante + ' WHERE id_partido  = ' + req.params.id;
-    console.log(query);
+    const query = 'UPDATE juega SET golesLocal = ' + partido.golesLocal + ', golesVisitante = ' + partido.golesVisitante + ', penalesLocal = ' + partido.penalesLocal + ', penalesVisitante = ' + partido.penalesVisitante + ' WHERE id_partido  = ' + partido.id_partido;
     mysqlConnection.query(query, (err, rows, fields) => {
         res.json('updated');
     })
