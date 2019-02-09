@@ -60,7 +60,10 @@ grupoController.getPartido = (req, res, next) => {
 
 grupoController.editPartido = (req, res, next) => {
     const partido = req.body;
-    const query = 'UPDATE juega SET golesLocal = ' + partido.golesLocal + ', golesVisitante = ' + partido.golesVisitante + ', penalesLocal = ' + partido.penalesLocal + ', penalesVisitante = ' + partido.penalesVisitante + ' WHERE id_partido  = ' + req.params.id;
+    console.log('el body papa');
+    console.log(partido);
+    const query = 'UPDATE juega SET golesLocal = ' + partido.golesLocal + ', golesVisitante = ' + partido.golesVisitante + ', penalesLocal = ' + partido.penalesLocal + ', penalesVisitante = ' + partido.penalesVisitante + ' WHERE id_partido  = ' + partido.id_partido;
+    console.log(query);
     mysqlConnection.query(query, (err, rows, fields) => {
         res.json('updated');
     })
