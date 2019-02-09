@@ -37,10 +37,10 @@ CREATE TABLE IF NOT EXISTS juega (
 	id_partido INT(2) NOT NULL AUTO_INCREMENT,
 	id_equipoUno INT(2) NOT NULL,
 	id_equipoDos INT(2) NOT NULL,
-	golesLocal INT(2) NULL DEFAULT '-1',
-	golesVisitante INT(2) NULL DEFAULT '-1',
-	penalesLocal INT(2) NULL DEFAULT '-1',
-	penalesVisitante INT(2) NULL DEFAULT '-1',
+	golesLocal INT(2) NOT NULL DEFAULT '-1',
+	golesVisitante INT(2) NOT NULL DEFAULT '-1',
+	penalesLocal INT(2) NOT NULL DEFAULT '-1',
+	penalesVisitante INT(2) NOT NULL DEFAULT '-1',
 	id_grupo INT(1) NULL,
 	instancia VARCHAR(3) NULL,
 	anio INT(4) NULL,
@@ -672,3 +672,4 @@ INSERT INTO `equipo` (`nombre`, `grupo`, `anio`, `torneo`) VALUES
 ('Club Atlético Ayacucho', 4, 2019, 1),
 ('Club Atlético Maipu', 4, 2019, 1),
 ('Club Ferrocarril Roca (Las Flores)', 4, 2019, 1);
+
