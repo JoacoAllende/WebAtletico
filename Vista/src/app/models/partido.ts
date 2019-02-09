@@ -1,6 +1,6 @@
 export class Partido {
 
-    constructor(id_partido = 0, id_equipoUno = 0, id_equipoDos = 0, golesLocal = 0, golesVisitante = 0, penalesLocal = -1, penalesVisitante = -1, id_grupo = 0, instancia = '', equipoUno = '', equipoDos = '', torneo = 0, año = 2019){
+    constructor(id_partido = 0, id_equipoUno = 0, id_equipoDos = 0, golesLocal = 0, golesVisitante = 0, penalesLocal = -1, penalesVisitante = -1, id_grupo = 0, instancia = '', equipoUno = '', equipoDos = '', torneo = 0, anio = 2019){
         this.id_partido = id_partido;
         this.id_equipoUno = id_equipoUno;
         this.id_equipoDos = id_equipoDos;
@@ -13,7 +13,7 @@ export class Partido {
         this.equipoUno = equipoUno;
         this.equipoDos = equipoDos;
         this.torneo = torneo;
-        this.año = año;
+        this.anio = anio;
     } 
 
     id_partido: Number;
@@ -28,5 +28,5 @@ export class Partido {
     equipoUno: String;
     equipoDos: String;
     torneo: number;
-    año: number;
+    anio: number;
 }
