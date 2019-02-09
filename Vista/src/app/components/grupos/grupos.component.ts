@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { GruposService } from '../../services/grupos.service';
 import { Grupo } from 'src/app/models/grupo';
 import { ActivatedRoute, Params } from '@angular/router';
+import { GlobalsService } from 'src/app/services/globals.service';
+import { Partido } from 'src/app/models/partido';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-grupos',
@@ -11,7 +14,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class GruposComponent implements OnInit {
 
-  constructor(public gruposService : GruposService, private rutaActiva : ActivatedRoute) { }
+  constructor(public gruposService : GruposService, private rutaActiva : ActivatedRoute, public globals :GlobalsService) { }
 
   ngOnInit() {
     this.rutaActiva.params.subscribe(
@@ -28,6 +31,25 @@ export class GruposComponent implements OnInit {
       .subscribe( res => {
         this.gruposService.grupos = res as Grupo[];
       });
+  }
+  
+  editForm(partido: Partido) {
+    this.gruposService.selectedPartido = partido;
+  }
+
+  resetForm(form?: NgForm){
+    if(form){
+      form.reset();
+      this.gruposService.selectedPartido = new Partido();
+    }
+  }
+
+  editPartido(torneo, año, form : NgForm){
+    this.gruposService.putPartido(torneo, año, form.value)
+    .subscribe(res => {
+      this.resetForm(form);
+      this.getGrupos(torneo, año);
+    })
   }
 
 }
