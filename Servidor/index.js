@@ -57,7 +57,7 @@ app.use(require('./routes/goleadores.routes'));
 app.use(require('./routes/copaPlata.routes'));
 app.use(require('./routes/autenticacion.routes'));
 app.use(require('./routes/torneosPasados.routes'));
-
+app.use(require('./routes/vallaInvicta.routes'));
 
 //Starting the Server
 
