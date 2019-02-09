@@ -33,7 +33,6 @@ export class GoleadoresComponent implements OnInit {
   }
 
   addGoleador(torneo, año, form : NgForm){
-    console.log("entre");
     if (form.value.id == -1){
       this.goleadoresService.postGoleador(torneo, año, form.value)
       .subscribe(res => {
