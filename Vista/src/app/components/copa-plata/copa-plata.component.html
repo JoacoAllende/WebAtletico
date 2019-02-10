@@ -11,7 +11,7 @@
                 <td *ngIf="partido.penalesLocal == -1 || partido.id_equipoUno == partido.id_equipoDos; else penalesUno"> - </td>
                 <ng-template #penalesUno><div style="margin: 9%;">{{partido.penalesLocal}}</div></ng-template>
                 <td *ngIf="(partido.id_equipoUno != partido.id_equipoDos) && (partido.golesLocal != -1 && partido.golesVisitante != -1); else noPenales">{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
-                <ng-template #noPenales ><div style="margin: 9%;"> - </div></ng-template>
+                <ng-template #noPenales ><div style="margin: 9%;"> - </div></ng-template> 
                 <td *ngIf="partido.penalesVisitante == -1 || partido.id_equipoUno == partido.id_equipoDos; else penalesDos"> - </td>
                 <ng-template #penalesDos><div style="margin: 9%;">{{partido.penalesVisitante}}</div></ng-template>
                 <td *ngIf="partido.id_equipoUno != partido.id_equipoDos; else libre">{{partido.equipoDos}}</td>

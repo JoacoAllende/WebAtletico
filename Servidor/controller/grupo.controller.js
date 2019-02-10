@@ -23,16 +23,29 @@ grupoController.getGrupos = (req, res, next) => {
                         let partidos = [];
                         mysqlConnection.query(query, (err, rows, fields) => {
                             if (!err) {
-                                //console.log(rows);
                                 let resultArrayPartidos = Object.values(JSON.parse(JSON.stringify(rows)));
                                 resultArrayPartidos.forEach(function (element) {
                                     partidos.push(element);
                                 });
                                 grupo.push(partidos);
-                                //console.log(grupo);
                                 grupos.push(grupo);
                                 if (i == cantGrupos) {
-                                    res.json(grupos);
+                                    let resultado = [];
+                                    resultado.push(grupos);
+                                    const query = 'SELECT j.*, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON j.id_equipoDos = e2.id WHERE j.instancia = "iz" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';
+                                    let partidos = [];
+                                    mysqlConnection.query(query, (err, rows, fields) => {
+                                        if (!err) {
+                                            let resultArrayPartidos = Object.values(JSON.parse(JSON.stringify(rows)));
+                                            resultArrayPartidos.forEach(function (element) {
+                                                partidos.push(element);
+                                            });
+                                            resultado.push(partidos);
+                                            res.json(resultado);
+                                        } else {
+                                            console.log(err);
+                                        }
+                                    })
                                 }
                             } else {
                                 console.log(err);

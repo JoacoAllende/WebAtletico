@@ -1,5 +1,5 @@
 <div class="container centrado">
-  <div *ngFor="let grupo of gruposService.grupos">
+  <div *ngFor="let grupo of gruposService.grupos[0]">
     <h1>Grupo {{grupo[0][0].grupo}}</h1>
     <div>
       <table class="table table-bordered table-striped">
@@ -49,6 +49,26 @@
       </table>
       <div class="espacio"> </div>
     </div>
+  </div>
+  <div>
+    <table class="table table-bordered table-striped">
+        <thead>
+          <th>Equipo</th>
+          <th>Resultado</th>
+          <th>Equipo</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let partido of gruposService.grupos[1]">
+            <td>{{partido.equipoUno}}</td>
+            <td *ngIf="partido.golesLocal != -1 && partido.GolesVisitante != -1; else noJugado">{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
+            <ng-template #noJugado> - </ng-template>
+            <td>{{partido.equipoDos}}</td>
+            <td *ngIf="globals.activo"><a (click)="editForm(partido)">
+              <i class="glyphicon-pencil"></i>
+            </a></td>
+          </tr>
+        </tbody>
+      </table>
   </div>
 </div>
 <div *ngIf="globals.activo" class="container">
