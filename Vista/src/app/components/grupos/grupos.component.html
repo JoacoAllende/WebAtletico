@@ -38,7 +38,8 @@
         <tbody>
           <tr *ngFor="let partido of grupo[1]">
             <td>{{partido.equipoUno}}</td>
-            <td>{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
+            <td *ngIf="partido.golesLocal != -1 && partido.GolesVisitante != -1; else noJugado">{{partido.golesLocal}} - {{partido.golesVisitante}}</td>
+            <ng-template #noJugado> - </ng-template>
             <td>{{partido.equipoDos}}</td>
             <td *ngIf="globals.activo"><a (click)="editForm(partido)">
               <i class="glyphicon-pencil"></i>
