@@ -58,6 +58,7 @@ app.use(require('./routes/copaPlata.routes'));
 app.use(require('./routes/autenticacion.routes'));
 app.use(require('./routes/torneosPasados.routes'));
 app.use(require('./routes/vallaInvicta.routes'));
+app.use(require('./routes/tarjetas.routes'));
 
 //Starting the Server
 
