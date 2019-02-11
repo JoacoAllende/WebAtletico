@@ -10,6 +10,7 @@ import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.comp
 import { JugadoresComponent } from './components/jugadores/jugadores.component';
 import { HistoriaComponent } from './components/historia/historia.component';
 import { TorneosPasadosComponent } from './components/torneos-pasados/torneos-pasados.component';
+import { VallaInvictaComponent } from './components/valla-invicta/valla-invicta.component';
 
 const routes: Routes = [
   
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'copaOro/:torneo/:año', component: CopaOroComponent },
   { path: 'copaPlata/:torneo/:año', component: CopaPlataComponent },
   { path: 'goleadores/:torneo/:año', component: GoleadoresComponent },
+  { path: 'vallaInvicta/:torneo/:año', component: VallaInvictaComponent },
   { path: 'jugadores', component: JugadoresComponent },
   { path: 'historia', component: HistoriaComponent },
   { path: 'torneosPasados', component: TorneosPasadosComponent },

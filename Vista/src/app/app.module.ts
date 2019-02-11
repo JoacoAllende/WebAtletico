@@ -17,6 +17,7 @@ import { FormSignUpComponent } from './components/form-sign-up/form-sign-up.comp
 import { JugadoresComponent } from './components/jugadores/jugadores.component';
 import { HistoriaComponent } from './components/historia/historia.component';
 import { TorneosPasadosComponent } from './components/torneos-pasados/torneos-pasados.component';
+import { VallaInvictaComponent } from './components/valla-invicta/valla-invicta.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TorneosPasadosComponent } from './components/torneos-pasados/torneos-pa
     JugadoresComponent,
     HistoriaComponent,
     TorneosPasadosComponent,
+    VallaInvictaComponent,
   ],
   imports: [
     BrowserModule,
