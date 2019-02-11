@@ -24,6 +24,7 @@
                         <li><a [routerLink]="['/copaOro','0','2019']">Copa de Oro</a></li>
                         <li><a [routerLink]="['/copaPlata','0','2019']">Copa de Plata</a></li>
                         <li><a [routerLink]="['/goleadores','0','2019']">Goleadores</a></li>
+                        <li *ngIf="globals.activo"><a [routerLink]="['/vallaInvicta','0','2019']">Vallas invictas</a></li>
                     </ul>
                 </li>
                 <li><a>Torneo Paralelo</a>
@@ -32,6 +33,7 @@
                         <li><a [routerLink]="['/copaOro','1','2019']">Copa de Oro</a></li>
                         <li><a [routerLink]="['/copaPlata','1','2019']">Copa de Plata</a></li>
                         <li><a [routerLink]="['/goleadores','1','2019']">Goleadores</a></li>
+                        <li *ngIf="globals.activo"><a [routerLink]="['/vallaInvicta','1','2019']">Vallas invictas</a></li>
                     </ul>
                 </li>
                 <li><a>Torneo Pasados</a>
@@ -41,7 +43,8 @@
                                     <li><a [routerLink]="['/grupos','0','2018']">Fase de grupos</a></li>
                                     <li><a [routerLink]="['/copaOro','0','2018']">Copa de Oro</a></li>
                                     <li><a [routerLink]="['/copaPlata','0','2018']">Copa de Plata</a></li>
-                                    <li><a [routerLink]="['/goleadores','0','2018']">Goleadores</a></li>>
+                                    <li><a [routerLink]="['/goleadores','0','2018']">Goleadores</a></li>
+                                    <li *ngIf="globals.activo"><a [routerLink]="['/vallaInvicta','0','2018']">Vallas invictas</a></li>
                                 </ul>
                             </li>
                             <li><a>Torneo Paralelo 2018</a>
@@ -50,6 +53,7 @@
                                     <li><a [routerLink]="['/copaOro','1','2018']">Copa de Oro</a></li>
                                     <li><a [routerLink]="['/copaPlata','1','2018']">Copa de Plata</a></li>
                                     <li><a [routerLink]="['/goleadores','1','2018']">Goleadores</a></li>
+                                    <li *ngIf="globals.activo"><a [routerLink]="['/vallaInvicta','1','2018']">Vallas invictas</a></li>
                                 </ul>
                             </li>
                     </ul>

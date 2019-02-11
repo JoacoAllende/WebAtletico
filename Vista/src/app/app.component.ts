@@ -8,7 +8,7 @@ import { GlobalsService } from './services/globals.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private gruposService : GruposService,private globals:GlobalsService){}
+  constructor(private gruposService : GruposService, private globals : GlobalsService){}
 
 
   private getGrupos(to, a){
