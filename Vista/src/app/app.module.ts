@@ -18,6 +18,7 @@ import { JugadoresComponent } from './components/jugadores/jugadores.component';
 import { HistoriaComponent } from './components/historia/historia.component';
 import { TorneosPasadosComponent } from './components/torneos-pasados/torneos-pasados.component';
 import { VallaInvictaComponent } from './components/valla-invicta/valla-invicta.component';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { VallaInvictaComponent } from './components/valla-invicta/valla-invicta.
     HistoriaComponent,
     TorneosPasadosComponent,
     VallaInvictaComponent,
+    TarjetasComponent,
   ],
   imports: [
     BrowserModule,

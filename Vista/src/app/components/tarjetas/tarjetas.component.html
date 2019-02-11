@@ -1,0 +1,21 @@
+<div *ngIf="globals.activo" class="container centrado">
+  <h1 class="text-center">TARJETAS</h1>
+  <div class="espacio"></div>
+  <div>
+    <table class="table table-bordered table-striped">
+      <thead class="text-center">
+        <th>Equipo</th>
+        <th>Tarjetas amarillas</th>
+        <th>Tarjetas rojas</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let equipo of tarjetasService.equipos">
+          <td>{{equipo.nombre}}</td>
+          <td>{{equipo.cantAmarillas}}</td>
+          <td>{{equipo.cantRojas}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="espacio"> </div>  
+  </div>
+</div>
