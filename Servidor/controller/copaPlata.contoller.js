@@ -57,7 +57,7 @@ copaPlataController.getPartidos = (req, res, next) => {
 };
 
 copaPlataController.getPartido = (req, res, next) => {
-    const query = 'SELECT * FROM juega WHERE id_partido = ' + req.params.id;
+    const query = 'SELECT *, date(dia) AS fecha, hour(dia) AS hora, minute(dia) as minutos, FROM juega WHERE id_partido = ' + req.params.id;
     mysqlConnection.query(query, (err, rows, fields) =>{
         res.json(rows);
     })
