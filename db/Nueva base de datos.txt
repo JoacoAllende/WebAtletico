@@ -83,91 +83,91 @@ CREATE TABLE IF NOT EXISTS equipoParticipaTorneo (
 
 -- ingreso los datos de los torneos pasados
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto, goleador) VALUES 
-('1° Torneo Nacional 14 al 16 de febrero de 1997 - Categoría 1984', 16, 'Club Atlético Boca Juniors', 'Club Azul Athletic', 'Club Estudiantes de La Plata', 'Ferrocarril Roca de Las Flores', 'Matías Alustiza (Club Azul Athletic)'),
-('2º Torneo Nacional 6 al 8 de febrero de 1998 - Categoría 1985', 16, 'Racing Club de Avellaneda', 'Club Atlético Boca Juniors', 'Club Atlético Lanús', 'Club Atlético Independiente de Avellaneda', 'Luis Benítez (Racing Club de Avellaneda)');
+('1° Torneo Nacional 14 al 16 de febrero de 1997 - Categoria 1984', 16, 'Club Atletico Boca Juniors', 'Club Azul Athletic', 'Club Estudiantes de La Plata', 'Ferrocarril Roca de Las Flores', 'Matias Alustiza (Club Azul Athletic)'),
+('2º Torneo Nacional 6 al 8 de febrero de 1998 - Categoria 1985', 16, 'Racing Club de Avellaneda', 'Club Atletico Boca Juniors', 'Club Atletico Lanus', 'Club Atletico Independiente de Avellaneda', 'Luis Benitez (Racing Club de Avellaneda)');
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto, goleador, cantGoles) VALUES 
-('3º Torneo Nacional 5 al 7 de febrero de 1999 - Categoría 1986', 20, 'Club Atlético Boca Juniors', 'Club Atlético Independiente de Avellaneda', 'Club Atlético Lanús', 'Racing Club de Avellaneda', 'Damián Nápoli (Club Atlético Boca Juniors)', 8);
+('3º Torneo Nacional 5 al 7 de febrero de 1999 - Categoria 1986', 20, 'Club Atletico Boca Juniors', 'Club Atletico Independiente de Avellaneda', 'Club Atletico Lanus', 'Racing Club de Avellaneda', 'Damian Napoli (Club Atletico Boca Juniors)', 8);
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto) VALUES 
-('4º Torneo Nacional 4 al 6 de febrero de 2000 - Categoría 1987', 24, 'Club Atlético Boca Juniors', 'Club Atlético Independiente de Avellaneda', 'Racing Club de Avellaneda', 'Club Atlético Ayacucho');
+('4º Torneo Nacional 4 al 6 de febrero de 2000 - Categoria 1987', 24, 'Club Atletico Boca Juniors', 'Club Atletico Independiente de Avellaneda', 'Racing Club de Avellaneda', 'Club Atletico Ayacucho');
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto, goleador, cantGoles) VALUES 
-('5º Torneo Nacional 9 al 11 de febrero de 2001 - Categoría 1988', 20, 'Club Atlético Independiente de Avellaneda', 'Club Atlético River Plate de Montevideo', 'Club Atlético Boca Juniors', 'Racing Club de Avellaneda', 'Sebastián Ahumada (Racing Club de Avellaneda)', 11),
-('6º Torneo Nacional 7 al 10 de febrero de 2002 - Categoría 1989', 21, 'Club Atlético Vélez Sarsfield', 'Club Atlético Boca Juniors', 'Racing Club de Avellaneda', 'Club Atlético Independiente de Avellaneda', 'Jonatan Cristaldo (Club Atlético Vélez Sarsfield)', 11), 
-('7º Torneo Nacional 6 al 9 de febrero de 2003 - Categoría 1990', 20, 'Club Atlético Boca Juniors', 'Club Atlético Independiente de Avellaneda', 'Club Atlético Vélez Sarsfield', 'Club Deportivo Castelli', 'Brian Nievas (Club Atlético Independiente de Avellaneda)', 11),
-('8º Torneo Nacional 5 al 8 de febrero de 2004 - Categoría 1991', 20, 'Club Atlético Boca Juniors', 'Club Atlético Almagro Florida (Mar del Plata)', 'Club Atlético Vélez Sarsfield', 'Racing Club de Avellaneda', 'Nicolás Toledo (Ferrocarril Roca de Las Flores)', 10),
-('9º Torneo Nacional 6 al 8 de febrero de 2005 - Categoría 1992', 20, 'Club Atlético Boca Juniors', 'Racing Club de Avellaneda', 'Club Atlético Vélez Sarsfield', 'Club Atlético Independiente de Avellaneda', 'Ignacio Patero (Club Atlético Vélez Sarsfield)', 8),
-('10º Torneo Nacional 7 al 9 de febrero de 2006 - Categoría 1993', 20, 'Club Atlético Vélez Sarsfield', 'Club Atlético Independiente de Mar del Plata', 'Racing Club de Avellaneda', 'Club Atlético Banfield', 'Federico Caloni (Club Atlético Vélez Sarsfield)', 7);
+('5º Torneo Nacional 9 al 11 de febrero de 2001 - Categoria 1988', 20, 'Club Atletico Independiente de Avellaneda', 'Club Atletico River Plate de Montevideo', 'Club Atletico Boca Juniors', 'Racing Club de Avellaneda', 'Sebastian Ahumada (Racing Club de Avellaneda)', 11),
+('6º Torneo Nacional 7 al 10 de febrero de 2002 - Categoria 1989', 21, 'Club Atletico Velez Sarsfield', 'Club Atletico Boca Juniors', 'Racing Club de Avellaneda', 'Club Atletico Independiente de Avellaneda', 'Jonatan Cristaldo (Club Atletico Velez Sarsfield)', 11), 
+('7º Torneo Nacional 6 al 9 de febrero de 2003 - Categoria 1990', 20, 'Club Atletico Boca Juniors', 'Club Atletico Independiente de Avellaneda', 'Club Atletico Velez Sarsfield', 'Club Deportivo Castelli', 'Brian Nievas (Club Atletico Independiente de Avellaneda)', 11),
+('8º Torneo Nacional 5 al 8 de febrero de 2004 - Categoria 1991', 20, 'Club Atletico Boca Juniors', 'Club Atletico Almagro Florida (Mar del Plata)', 'Club Atletico Velez Sarsfield', 'Racing Club de Avellaneda', 'Nicolas Toledo (Ferrocarril Roca de Las Flores)', 10),
+('9º Torneo Nacional 6 al 8 de febrero de 2005 - Categoria 1992', 20, 'Club Atletico Boca Juniors', 'Racing Club de Avellaneda', 'Club Atletico Velez Sarsfield', 'Club Atletico Independiente de Avellaneda', 'Ignacio Patero (Club Atletico Velez Sarsfield)', 8),
+('10º Torneo Nacional 7 al 9 de febrero de 2006 - Categoria 1993', 20, 'Club Atletico Velez Sarsfield', 'Club Atletico Independiente de Mar del Plata', 'Racing Club de Avellaneda', 'Club Atletico Banfield', 'Federico Caloni (Club Atletico Velez Sarsfield)', 7);
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto) VALUES 
-('11º Torneo Nacional 8 al 10 de febrero de 2007 - Categoría 1994', 20, 'Club Atlético Boca Juniors', 'Club Atlético Vélez Sarsfield', 'Club Atlético Banfield', 'Club Atlético Liniers de Bahía Blanca'),
-('12º Torneo Nacional 6 al 9 de febrero de 2008 - Categoría 1995', 16, 'Club Atlético Banfield', 'E.F.I.G.A. (Las Flores)', 'Club Cadetes de San Martín', 'Club Atlético Ayacucho');
+('11º Torneo Nacional 8 al 10 de febrero de 2007 - Categoria 1994', 20, 'Club Atletico Boca Juniors', 'Club Atletico Velez Sarsfield', 'Club Atletico Banfield', 'Club Atletico Liniers de Bahia Blanca'),
+('12º Torneo Nacional 6 al 9 de febrero de 2008 - Categoria 1995', 16, 'Club Atletico Banfield', 'E.F.I.G.A. (Las Flores)', 'Club Cadetes de San Martin', 'Club Atletico Ayacucho');
 INSERT INTO torneo (descripcion, cantEquipos, primero, segundo, tercero, cuarto, goleador, cantGoles) VALUES 
-('13º Torneo Nacional 5 al 7 de febrero de 2016 - Categoría 2003', 20, 'Racing Club de Avellaneda', 'Club Atlético Lanús', 'Club Estudiantes de La Plata', 'Club Atlético Banfield', 'Evian Daniel Crescitelli (Club Estudiantes de La Plata)', 8),
-('14º Torneo Nacional 9 al 12 de febrero de 2017 - Categoría 2004', 24, 'Club Atlético Vélez Sarsfield', 'Club Estudiantes de La Plata', 'Club Atlético San Lorenzo de Almagro', 'Club Atlético Banfield', 'Santiago Castro (Club Atlético Vélez Sarsfield)', 12),
-('15º Torneo Nacional 1 al 4 de febrero de 2018 - Categoría 2005', 28, 'Racing Club de Avellaneda', 'Club Atlético Boca Juniors', 'Club Atlético Vélez Sarsfield', 'Club de Gimnasia y Esgrima La Plata', 'Raúl Ignacio Cabral (Club Atlético Vélez Sarsfield)', 15);
+('13º Torneo Nacional 5 al 7 de febrero de 2016 - Categoria 2003', 20, 'Racing Club de Avellaneda', 'Club Atletico Lanus', 'Club Estudiantes de La Plata', 'Club Atletico Banfield', 'Evian Daniel Crescitelli (Club Estudiantes de La Plata)', 8),
+('14º Torneo Nacional 9 al 12 de febrero de 2017 - Categoria 2004', 24, 'Club Atletico Velez Sarsfield', 'Club Estudiantes de La Plata', 'Club Atletico San Lorenzo de Almagro', 'Club Atletico Banfield', 'Santiago Castro (Club Atletico Velez Sarsfield)', 12),
+('15º Torneo Nacional 1 al 4 de febrero de 2018 - Categoria 2005', 28, 'Racing Club de Avellaneda', 'Club Atletico Boca Juniors', 'Club Atletico Velez Sarsfield', 'Club de Gimnasia y Esgrima La Plata', 'Raul Ignacio Cabral (Club Atletico Velez Sarsfield)', 15);
 
 -- ingreso los equipos de afa participantes de cada torneo
 INSERT INTO equipoParticipaTorneo (id_torneo, equipo) VALUES
-(1, 'Club Atlético Boca Juniors'),
+(1, 'Club Atletico Boca Juniors'),
 (1, 'Racing Club de Avellaneda'),
 (1, 'Club Estudiantes de La Plata'),
-(2, 'Club Atlético Boca Juniors'),
+(2, 'Club Atletico Boca Juniors'),
 (2, 'Racing Club de Avellaneda'),
-(2, 'Club Atlético Lanús'),
-(2, 'Club Atlético Independiente de Avellaneda'),
-(3, 'Club Atlético Boca Juniors'),
+(2, 'Club Atletico Lanus'),
+(2, 'Club Atletico Independiente de Avellaneda'),
+(3, 'Club Atletico Boca Juniors'),
 (3, 'Racing Club de Avellaneda'),
-(3, 'Club Atlético Lanús'),
-(3, 'Club Atlético Independiente de Avellaneda'),
-(4, 'Club Atlético Boca Juniors'),
+(3, 'Club Atletico Lanus'),
+(3, 'Club Atletico Independiente de Avellaneda'),
+(4, 'Club Atletico Boca Juniors'),
 (4, 'Racing Club de Avellaneda'),
-(4, 'Club Atlético River Plate'),
-(4, 'Club Atlético Independiente de Avellaneda'),
-(5, 'Club Atlético Boca Juniors'),
+(4, 'Club Atletico River Plate'),
+(4, 'Club Atletico Independiente de Avellaneda'),
+(5, 'Club Atletico Boca Juniors'),
 (5, 'Racing Club de Avellaneda'),
-(5, 'Club Atlético Independiente de Avellaneda'),
-(5, 'Club Atlético River Plate de Montevideo (Uruguay)'),
-(6, 'Club Atlético Boca Juniors'),
+(5, 'Club Atletico Independiente de Avellaneda'),
+(5, 'Club Atletico River Plate de Montevideo (Uruguay)'),
+(6, 'Club Atletico Boca Juniors'),
 (6, 'Racing Club de Avellaneda'),
-(6, 'Club Atlético Vélez Sarsfield'),
-(6, 'Club Atlético Independiente de Avellaneda'),
-(6, 'Club Atlético Paulistinha de Brasil'),
-(7, 'Club Atlético Boca Juniors'),
+(6, 'Club Atletico Velez Sarsfield'),
+(6, 'Club Atletico Independiente de Avellaneda'),
+(6, 'Club Atletico Paulistinha de Brasil'),
+(7, 'Club Atletico Boca Juniors'),
 (7, 'Racing Club de Avellaneda'),
-(7, 'Club Atlético Vélez Sarsfield'),
-(7, 'Club Atlético Independiente de Avellaneda'),
-(8, 'Club Atlético Boca Juniors'),
+(7, 'Club Atletico Velez Sarsfield'),
+(7, 'Club Atletico Independiente de Avellaneda'),
+(8, 'Club Atletico Boca Juniors'),
 (8, 'Racing Club de Avellaneda'),
-(8, 'Club Atlético Vélez Sarsfield'),
-(8, 'Club Atlético Independiente de Avellaneda'),
-(9, 'Club Atlético Boca Juniors'),
+(8, 'Club Atletico Velez Sarsfield'),
+(8, 'Club Atletico Independiente de Avellaneda'),
+(9, 'Club Atletico Boca Juniors'),
 (9, 'Racing Club de Avellaneda'),
-(9, 'Club Atlético Vélez Sarsfield'),
-(9, 'Club Atlético Independiente de Avellaneda'),
-(10, 'Club Atlético Banfield'),
+(9, 'Club Atletico Velez Sarsfield'),
+(9, 'Club Atletico Independiente de Avellaneda'),
+(10, 'Club Atletico Banfield'),
 (10, 'Racing Club de Avellaneda'),
-(10, 'Club Atlético Vélez Sarsfield'),
-(11, 'Club Atlético Boca Juniors'),
-(11, 'Club Atlético Banfield'),
-(11, 'Club Atlético Vélez Sarsfield'),
+(10, 'Club Atletico Velez Sarsfield'),
+(11, 'Club Atletico Boca Juniors'),
+(11, 'Club Atletico Banfield'),
+(11, 'Club Atletico Velez Sarsfield'),
 (12, 'Racing Club de Avellaneda'),
-(12, 'Club Atlético Banfield'),
+(12, 'Club Atletico Banfield'),
 (13, 'Racing Club de Avellaneda'),
 (13, 'Club Estudiantes de La Plata'),
-(13, 'Club Atlético Lanús'),
-(13, 'Club Atlético Banfield'),
-(13, 'Club Olimpo de Bahía Blanca'),
+(13, 'Club Atletico Lanus'),
+(13, 'Club Atletico Banfield'),
+(13, 'Club Olimpo de Bahia Blanca'),
 (14, 'Racing Club de Avellaneda'),
 (14, 'Club Estudiantes de La Plata'),
-(14, 'Club Atlético San Lorenzo de Almagro'),
-(14, 'Club Atlético Banfield'),
-(14, 'Club Atlético Vélez Sarsfield'),
-(14, 'Club Nacional de Fútbol de Uruguay'),
+(14, 'Club Atletico San Lorenzo de Almagro'),
+(14, 'Club Atletico Banfield'),
+(14, 'Club Atletico Velez Sarsfield'),
+(14, 'Club Nacional de Futbol de Uruguay'),
 (15, 'Racing Club de Avellaneda'),
 (15, 'Club Estudiantes de La Plata'),
-(15, 'Club Atlético Boca Juniors'),
-(15, 'Club Atlético Banfield'),
-(15, 'Club Atlético Vélez Sarsfield'),
+(15, 'Club Atletico Boca Juniors'),
+(15, 'Club Atletico Banfield'),
+(15, 'Club Atletico Velez Sarsfield'),
 (15, 'Club de Gimnasia y Esgrima La Plata'),
-(15, 'Club Nacional de Fútbol de Uruguay');
+(15, 'Club Nacional de Futbol de Uruguay');
 
 -- ingreso equipos del torneon nacional 2018
 INSERT INTO `equipo` (`id`, `nombre`, `puntos`, `partidosJugados`, `partidosGanados`, `partidosEmpatados`, `partidosPerdidos`, `golesAFavor`, `golesEnContra`, `diferenciaGoles`, `grupo`) VALUES
@@ -623,18 +623,18 @@ UPDATE goleadores SET torneo = 1 WHERE torneo IS NULL;
 
 -- ingreso los equipos del torneo nacional 2019
 INSERT INTO `equipo` (`nombre`, `grupo`, `anio`, `torneo`) VALUES
-('Club Atlético River Plate A.F.A.', 1, 2019, 0),
-('Club y Biblioteca Ramón Santamarina (Tandil)', 1, 2019, 0),
+('Club Atletico River Plate A.F.A.', 1, 2019, 0),
+('Club y Biblioteca Ramon Santamarina (Tandil)', 1, 2019, 0),
 ('Club Atletico Estudiantes (Olavarria)', 1, 2019, 0),
 ('Club Atletico Argentino (Saladillo)', 1, 2019, 0),
 ('Club Estudiantes de La Plata A.F.A.', 2, 2019, 0),
-('Club Atlético y Social San Lorenzo (Rauch)', 2, 2019, 0),
-('Club Atlético Ayacucho', 2, 2019, 0),
-('Club Atlético Belgrano (Vidal)', 2, 2019, 0),
-('Club Nacional de Fútbol de Uruguay', 3, 2019, 0),
+('Club Atletico y Social San Lorenzo (Rauch)', 2, 2019, 0),
+('Club Atletico Ayacucho', 2, 2019, 0),
+('Club Atletico Belgrano (Vidal)', 2, 2019, 0),
+('Club Nacional de Futbol de Uruguay', 3, 2019, 0),
 ('Club Atletico Ferrocarril Sud (Tandil)', 3, 2019, 0),
 ('Club Atletico Quilmes (Mar del Plata)', 3, 2019, 0),
-('Asociación Deportiva Atlético Villa Gesell', 3, 2019, 0),
+('Asociacion Deportiva Atletico Villa Gesell', 3, 2019, 0),
 ('Club Atletico Banfield A.F.A.', 4, 2019, 0),
 ('Club de Gimnasia y Esgrima de Tandil', 4, 2019, 0),
 ('Club Deportivo Independencia (A. G. Chavez)', 4, 2019, 0),
@@ -642,35 +642,35 @@ INSERT INTO `equipo` (`nombre`, `grupo`, `anio`, `torneo`) VALUES
 ('Club Atletico Boca Juniors A.F.A.', 5, 2019, 0),
 ('Club Defensores (Ayacucho)', 5, 2019, 0),
 ('Club Atletico Chascomus', 5, 2019, 0),
-('Club Social y Deportivo Unión (Maipu)', 5, 2019, 0),
+('Club Social y Deportivo Union (Maipu)', 5, 2019, 0),
 ('Club Atletico San Lorenzo de Almagro A.F.A.', 6, 2019, 0),
 ('Club Atletico Social y Deportivo Rauch', 6, 2019, 0),
-('Club Atlético Liniers (Bahía Blanca) B', 6, 2019, 0),
+('Club Atletico Liniers (Bahia Blanca) B', 6, 2019, 0),
 ('Club Deportivo El Leon (Gral. Madariaga)', 6, 2019, 0),
 ('Racing Club de Avellaneda A.F.A.', 7, 2019, 0),
 ('Club Sarmiento (Ayacucho)', 7, 2019, 0),
 ('Club Atletico Independiente (Mar del Plata)', 7, 2019, 0),
-('Club Atlético Maipu', 7, 2019, 0),
+('Club Atletico Maipu', 7, 2019, 0),
 ('Club Atletico Velez Sarsfield A.F.A.', 8, 2019, 0),
 ('Club Independiente (Tandil)', 8, 2019, 0),
-('Club Atlético Liniers (Bahía Blanca) A', 8, 2019, 0),
+('Club Atletico Liniers (Bahia Blanca) A', 8, 2019, 0),
 ('Club Ferrocarril Roca (Las Flores)', 8, 2019, 0);
 
 -- ingreso los equipos del torneo paralelo 2019
 INSERT INTO `equipo` (`nombre`, `grupo`, `anio`, `torneo`) VALUES
 ('Club Atletico Estudiantes (Olavarria)', 1, 2019, 1),
 ('Club Deportivo Juventud Unida (Gral. Madariaga)', 1, 2019, 1),
-('Club y Biblioteca Ramón Santamarina (Tandil)', 1, 2019, 1),
-('Club Atlético Liniers (Bahía Blanca) A', 1, 2019, 1),
+('Club y Biblioteca Ramon Santamarina (Tandil)', 1, 2019, 1),
+('Club Atletico Liniers (Bahia Blanca) A', 1, 2019, 1),
 ('Club Alumni Azuleño', 2, 2019, 1),
 ('Club Sarmiento (Ayacucho)', 2, 2019, 1),
 ('Club Independiente (Tandil)', 2, 2019, 1),
-('Club Atlético Liniers (Bahía Blanca) B', 2, 2019, 1),
+('Club Atletico Liniers (Bahia Blanca) B', 2, 2019, 1),
 ('Club Atletico Independiente (Mar del Plata)', 3, 2019, 1),
 ('Club Defensores (Ayacucho)', 3, 2019, 1),
 ('Club Atletico Ferrocarril Sud (Tandil)', 3, 2019, 1),
-('Club Atlético Ayacucho', 4, 2019, 1),
-('Club Atlético Maipu', 4, 2019, 1),
+('Club Atletico Ayacucho', 4, 2019, 1),
+('Club Atletico Maipu', 4, 2019, 1),
 ('Club Ferrocarril Roca (Las Flores)', 4, 2019, 1);
 
 -- ingresa los partidos de la fase de grupos del nacional
@@ -776,7 +776,7 @@ UPDATE juega SET dia = '2019-02-15 15:00:00' WHERE id_partido = 149;
 UPDATE juega SET dia = '2019-02-15 19:40:00' WHERE id_partido = 150;
  
  -- ingresa los partidos de la fase de grupos del paraleleo
-INSERT INTO juega (id_equipoUno, id_equipoDos, grupo, anio, torneo) VALUES 
+INSERT INTO juega (id_equipoUno, id_equipoDos, id_grupo, anio, torneo) VALUES 
 (77, 78, 1, 2019, 1),
 (79, 80, 1, 2019, 1),
 (80, 78, 1, 2019, 1),
@@ -794,7 +794,7 @@ INSERT INTO juega (id_equipoUno, id_equipoDos, grupo, anio, torneo) VALUES
 (87, 85, 3, 2019, 1),
 (88, 90, 4, 2019, 1),
 (90, 89, 4, 2019, 1),
-(88, 89, 4, 2019, 1),
+(88, 89, 4, 2019, 1);
 
 -- ingresa los partidos interzonales de la fase de grupos del paralelo
 INSERT INTO juega (id_equipoUno, id_equipoDos, instancia, anio, torneo) VALUES
