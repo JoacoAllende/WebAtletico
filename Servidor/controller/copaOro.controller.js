@@ -4,7 +4,7 @@ const mysqlConnection = require('../database');
 
 copaOroController.getPartidos = (req, res, next) => {
     let instancias = [];
-    const query = 'SELECT j.*, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "o" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';
+    const query = 'SELECT j.*, date(dia) AS fecha, hour(dia) AS hora, minute(dia) as minutos, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "o" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';
     mysqlConnection.query(query, (err, rows, fields) => {
         if (!err) {
             let instancia = [];
@@ -16,7 +16,7 @@ copaOroController.getPartidos = (req, res, next) => {
             instancia.push(["Octavos de final"]);
             instancia.push(partidos);
             instancias.push(instancia);
-            const query = 'SELECT j.*, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "c" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';
+            const query = 'SELECT j.*, date(dia) AS fecha, hour(dia) AS hora, minute(dia) as minutos, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "c" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';
             mysqlConnection.query(query, (err, rows, fields) => {
                 if (!err) {
                     let instancia = [];
@@ -28,7 +28,7 @@ copaOroController.getPartidos = (req, res, next) => {
                     instancia.push(["Cuartos de final"]);
                     instancia.push(partidos);
                     instancias.push(instancia);
-                    const query = 'SELECT j.*, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "s" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';
+                    const query = 'SELECT j.*, date(dia) AS fecha, hour(dia) AS hora, minute(dia) as minutos, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "s" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';
                     mysqlConnection.query(query, (err, rows, fields) => {
                     if (!err) {
                         let instancia = [];
@@ -40,7 +40,7 @@ copaOroController.getPartidos = (req, res, next) => {
                         instancia.push(["Semifinales"]);
                         instancia.push(partidos);
                         instancias.push(instancia);
-                        const query = 'SELECT j.*, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "7" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';
+                        const query = 'SELECT j.*, date(dia) AS fecha, hour(dia) AS hora, minute(dia) as minutos, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "7" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';
                         mysqlConnection.query(query, (err, rows, fields) => {
                             if (!err) {
                                 let instancia = [];
@@ -52,7 +52,7 @@ copaOroController.getPartidos = (req, res, next) => {
                                 instancia.push(["Séptimo puesto"]);
                                 instancia.push(partidos);
                                 instancias.push(instancia);
-                                const query = 'SELECT j.*, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "5" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';        
+                                const query = 'SELECT j.*, date(dia) AS fecha, hour(dia) AS hora, minute(dia) as minutos, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "5" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';        
                                 mysqlConnection.query(query, (err, rows, fields) => {
                                     if (!err) {
                                         let instancia = [];
@@ -64,7 +64,7 @@ copaOroController.getPartidos = (req, res, next) => {
                                         instancia.push(["Quinto puesto"]);
                                         instancia.push(partidos);
                                         instancias.push(instancia);
-                                        const query = 'SELECT j.*, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "t" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';        
+                                        const query = 'SELECT j.*, date(dia) AS fecha, hour(dia) AS hora, minute(dia) as minutos, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "t" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';        
                                         mysqlConnection.query(query, (err, rows, fields) => {
                                             if (!err) {
                                                 let instancia = [];
@@ -76,7 +76,7 @@ copaOroController.getPartidos = (req, res, next) => {
                                                 instancia.push(["Tercer puesto"]);
                                                 instancia.push(partidos);
                                                 instancias.push(instancia);
-                                                const query = 'SELECT j.*, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "f" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';        
+                                                const query = 'SELECT j.*, date(dia) AS fecha, hour(dia) AS hora, minute(dia) as minutos, e1.nombre AS equipoUno, e2.nombre AS equipoDos FROM equipo e1 INNER JOIN juega j ON (j.id_equipoUno = e1.id) INNER JOIN equipo e2 ON (j.id_equipoDos = e2.id) WHERE j.instancia = "f" AND j.torneo = ' + req.params.to + ' AND j.anio = ' + req.params.a + ' ORDER BY j.id_partido';        
                                                 mysqlConnection.query(query, (err, rows, fields) => {
                                                     if (!err) {
                                                         let instancia = [];
