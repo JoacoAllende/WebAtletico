@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'historia', component: HistoriaComponent },
   { path: 'torneosPasados', component: TorneosPasadosComponent },
   { path: 'login', component: UsuarioComponent},
-  { path: 'signup', component: FormSignUpComponent},
+  // { path: 'signup', component: FormSignUpComponent},
   { path: 'logout', redirectTo: 'inicio'},
   { path: '**', redirectTo: 'inicio'}
 ];
