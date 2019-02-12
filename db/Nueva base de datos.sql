@@ -838,7 +838,7 @@ AFTER UPDATE ON juega
 FOR EACH ROW
 BEGIN
 	IF (old.golesLocal != new.golesLocal OR old.golesVisitante != new.golesVisitante) THEN
-		IF (new.instancia IS NULL OR new.instancia = 'iz') THEN
+		IF (new.instancia IS NULL OR new.instancia = "iz") THEN
 			IF (old.golesLocal = -1 AND old.golesVisitante = -1) THEN
 				UPDATE equipo SET partidosJugados = partidosJugados + 1 WHERE (id = new.id_equipoUno OR id = new.id_equipoDos);
 				UPDATE equipo SET golesAFavor = golesAFavor + new.golesLocal, golesEnContra = golesEnContra + new.golesVisitante, golesEnContraTotal = golesEnContraTotal + new.golesVisitante WHERE id = new.id_equipoUno;
